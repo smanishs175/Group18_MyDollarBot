@@ -1,8 +1,9 @@
 import time
 import os
-#import helper
+
 import utils
-import graphing
+
+import graph
 import logging
 from telebot import types
 from datetime import datetime
@@ -59,7 +60,7 @@ def display_total(message, bot):
             bot.send_message(chat_id, spending_text)
         else:
             spending_text = "Here are your total spendings {}:\nCATEGORIES,AMOUNT \n----------------------\n{}".format(DayWeekMonth.lower(), total_text)
-            graphing.visualize(total_text)
+            graph.visualize(total_text)
             bot.send_photo(chat_id, photo=open('expenditure.png', 'rb'))
             os.remove('expenditure.png')
     except Exception as e:
