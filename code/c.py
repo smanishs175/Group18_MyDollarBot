@@ -24,7 +24,8 @@ spend_categories = ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', '
 spend_display_option = ['Day', 'Month']
 
 #set of implemented commands and their description
-commands = {
+commands = 
+{
     'menu': 'Display this menu',
     'add': 'Record/Add a new spending',
     'display': 'Show sum of expenditure for the current day/month',
