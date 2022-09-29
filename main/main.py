@@ -3,23 +3,14 @@
 import logging
 import telebot
 import time
-#import helper
 import utils
-#import edit
 import update
-#import history
 import pastrecord
-#import display
 import show
-#import estimate
 import calculate
-#import delete
 import remove
-
-#import add
 import addup
-import budget
-
+import overallBudget
 from datetime import datetime
 from jproperties import Properties
 
@@ -99,9 +90,9 @@ def command_remove(message):
     remove.run(message, bot)
 
 
-@bot.message_handler(commands=['budget'])
-def command_budget(message):
-    budget.run(message, bot)
+@bot.message_handler(commands=['overallBudget'])
+def command_overallBudget(message):
+    overallBudget.run(message, bot)
 
 
 # not used
