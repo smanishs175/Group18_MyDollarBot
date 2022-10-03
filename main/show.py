@@ -1,7 +1,7 @@
 import time
 import os
 
-import utils
+from main import helper
 
 import graph
 import logging
@@ -10,15 +10,15 @@ from datetime import datetime
 
 
 def run(message, bot):
-    utils.read_json()
+    helper.read_json()
     chat_id = message.chat.id
-    history = utils.getUserHistory(chat_id)
+    history = helper.getUserHistory(chat_id)
     if history is None:
         bot.send_message(chat_id, "Oops! Looks like you do not have any spending records!")
     else:
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
         markup.row_width = 2
-        for mode in utils.getSpendDisplayOptions():
+        for mode in helper.getSpendDisplayOptions():
             markup.add(mode)
         # markup.add('Day', 'Month')
         msg = bot.reply_to(message, 'Please select a category to see the total expense', reply_markup=markup)
@@ -30,10 +30,10 @@ def display_total(message, bot):
         chat_id = message.chat.id
         DayWeekMonth = message.text
 
-        if DayWeekMonth not in utils.getSpendDisplayOptions():
+        if DayWeekMonth not in helper.getSpendDisplayOptions():
             raise Exception("Sorry I can't show spendings for \"{}\"!".format(DayWeekMonth))
 
-        history = utils.getUserHistory(chat_id)
+        history = helper.getUserHistory(chat_id)
         if history is None:
             raise Exception("Oops! Looks like you do not have any spending records!")
 
@@ -45,11 +45,11 @@ def display_total(message, bot):
         total_text = ""
 
         if DayWeekMonth == 'Day':
-            query = datetime.now().today().strftime(utils.getDateFormat())
+            query = datetime.now().today().strftime(helper.getDateFormat())
             # query all that contains today's date
             queryResult = [value for index, value in enumerate(history) if str(query) in value]
         elif DayWeekMonth == 'Month':
-            query = datetime.now().today().strftime(utils.getMonthFormat())
+            query = datetime.now().today().strftime(helper.getMonthFormat())
             # query all that contains today's date
             queryResult = [value for index, value in enumerate(history) if str(query) in value]
         total_text = calculate_spendings(queryResult)

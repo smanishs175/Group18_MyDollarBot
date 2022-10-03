@@ -4,12 +4,12 @@ Follow the set of guidelines below to contribute to TrackMyDollar!
 
 ## Code of Conduct
 
-By participating, you are expected to uphold this code. Please report unacceptable behavior to psomash@ncsu.edu.
+By participating, you are expected to uphold this code. Please report unacceptable behavior to spandey5@ncsu.edu
 
 Prerequistes required before starting this project
 
 1. Must be a graduate student at NC State University
-2. Must be a student in Software Engineering Course in Fall 2021
+2. Must be a student in Software Engineering Course in Fall 2022
 3. Have proficiency in Python
 
 ## How can I Contribute -

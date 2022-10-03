@@ -1,4 +1,4 @@
-# TrackMyDollar
+# Group18_TrackMyDollar_V2_Fall2022 
 <hr>
 <p align="center">
 <a><img  height=560 width=1000 
@@ -15,7 +15,7 @@
 
 <hr>
 
-## About TrackMyDollar
+## About TrackMyDollar Version 2
 
 TrackMyDollar is an easy-to-use Telegram Bot that assists you in recording your daily expenses on a local system without any hassle.  
 With simple commands, this bot allows you to:
@@ -52,13 +52,13 @@ The below instructions can be followed in order to set-up this bot at your end i
 
 8. BotFather will now confirm the creation of your bot and provide a TOKEN to access the HTTP API - copy this token for future use.
 
-9. In the directory where this repo has been cloned, navigate to the "code" folder and open the "code.py" file. This file consists of a variable by the name "api_token". Paste the token copied in step 8 in the placeholder provided for this variable:
+9. In the directory where this repo has been cloned, navigate to the "code" folder and open the "main.py" file. This file consists of a variable by the name "api_token". Paste the token copied in step 8 in the placeholder provided for this variable:
 ```
   api_token = "INSERT API KEY HERE"
 ```
-10. In the Telegram app, search for your newly created bot by entering the username and open the same. Once this is done, go back to the terminal session. Navigate to the directory containing the "code.py" file and run the following command:
+10. In the Telegram app, search for your newly created bot by entering the username and open the same. Once this is done, go back to the terminal session. Navigate to the directory containing the "main.py" file and run the following command:
 ```
-  python code.py
+  python main.py
 ```
 11. A successful run will generate a message on your terminal that says "TeleBot: Started polling." 
 12. Post this, navigate to your bot on Telegram, enter the "/start" or "/menu" command, and you are all set to track your expenses!

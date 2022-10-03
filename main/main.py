@@ -3,23 +3,14 @@
 import logging
 import telebot
 import time
-#import helper
-import utils
-#import edit
+import helper
 import update
-#import history
 import pastrecord
-#import display
 import show
-#import estimate
 import calculate
-#import delete
 import remove
-
-#import add
 import addup
-import budget
-
+import overallBudget
 from datetime import datetime
 from jproperties import Properties
 
@@ -50,12 +41,12 @@ bot.set_update_listener(listener)
 # defines how the /start and /help commands have to be handled/processed
 @bot.message_handler(commands=['start', 'menu'])
 def start_and_menu_command(m):
-    utils.read_json()
+    helper.read_json()
     global user_list
     chat_id = m.chat.id
 
     text_intro = "Welcome to TrackMyDollar - a simple solution to track your expenses! \nHere is a list of available commands, please enter a command of your choice so that I can assist you further: \n\n"
-    commands = utils.getCommands()
+    commands = helper.getCommands()
     for c in commands:  # generate help text out of the commands dictionary defined at the top
         text_intro += "/" + c + ": "
         text_intro += commands[c] + "\n\n"
@@ -64,7 +55,7 @@ def start_and_menu_command(m):
 
 
 # defines how the /new command has to be handled/processed
-@bot.message_handler(commands=['addup'])
+@bot.message_handler(commands=['add'])
 def command_addup(message):
     addup.run(message, bot)
 
@@ -73,6 +64,43 @@ def command_addup(message):
 @bot.message_handler(commands=['pastrecord'])
 def command_pastrecord(message):
     pastrecord.run(message, bot)
+
+# function to fetch expenditure history of the user
+@bot.message_handler(commands=['history'])
+def command_history(message):
+    pastrecord.run(message, bot)
+
+
+# function to edit date, category or cost of a transaction
+@bot.message_handler(commands=['edit'])
+def command_edit(message):
+    update.run(message, bot)
+
+
+# function to display total expenditure
+@bot.message_handler(commands=['display'])
+def command_display(message):
+    show.run(message, bot)
+
+
+# function to estimate future expenditure
+@bot.message_handler(commands=['estimate'])
+def command_estimate(message):
+    calculate.run(message, bot)
+
+# handles "/delete" command
+@bot.message_handler(commands=['delete'])
+def command_delete(message):
+    remove.run(message, bot)
+
+
+@bot.message_handler(commands=['budget'])
+def command_budget(message):
+   overallBudget.run(message, bot)
+
+@bot.message_handler(commands=['category'])
+def command_category(message):
+    overallBudget.run(message, bot)
 
 
 # function to update date, category or cost of a transaction
@@ -99,9 +127,9 @@ def command_remove(message):
     remove.run(message, bot)
 
 
-@bot.message_handler(commands=['budget'])
-def command_budget(message):
-    budget.run(message, bot)
+@bot.message_handler(commands=['overallBudget'])
+def command_overallBudget(message):
+    overallBudget.run(message, bot)
 
 
 # not used
