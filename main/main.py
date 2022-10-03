@@ -55,7 +55,7 @@ def start_and_menu_command(m):
 
 
 # defines how the /new command has to be handled/processed
-@bot.message_handler(commands=['addup'])
+@bot.message_handler(commands=['add'])
 def command_addup(message):
     addup.run(message, bot)
 
@@ -64,6 +64,43 @@ def command_addup(message):
 @bot.message_handler(commands=['pastrecord'])
 def command_pastrecord(message):
     pastrecord.run(message, bot)
+
+# function to fetch expenditure history of the user
+@bot.message_handler(commands=['history'])
+def command_history(message):
+    pastrecord.run(message, bot)
+
+
+# function to edit date, category or cost of a transaction
+@bot.message_handler(commands=['edit'])
+def command_edit(message):
+    update.run(message, bot)
+
+
+# function to display total expenditure
+@bot.message_handler(commands=['display'])
+def command_display(message):
+    show.run(message, bot)
+
+
+# function to estimate future expenditure
+@bot.message_handler(commands=['estimate'])
+def command_estimate(message):
+    calculate.run(message, bot)
+
+# handles "/delete" command
+@bot.message_handler(commands=['delete'])
+def command_delete(message):
+    remove.run(message, bot)
+
+
+@bot.message_handler(commands=['budget'])
+def command_budget(message):
+   overallBudget.run(message, bot)
+
+@bot.message_handler(commands=['category'])
+def command_category(message):
+    overallBudget.run(message, bot)
 
 
 # function to update date, category or cost of a transaction
