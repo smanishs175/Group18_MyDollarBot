@@ -29,7 +29,7 @@ def create_message(text):
 @patch('telebot.telebot')
 def test_delete_run_with_data(mock_telebot, mocker):
     MOCK_USER_DATA = test_read_json()
-    mocker.patch.object(delete, 'helper')
+    mocker.patch.object(remove, 'helper')
     remove.helper.read_json.return_value = MOCK_USER_DATA
     print("Hello", MOCK_USER_DATA)
     remove.helper.write_json.return_value = True
@@ -42,7 +42,7 @@ def test_delete_run_with_data(mock_telebot, mocker):
 
 @patch('telebot.telebot')
 def test_delete_with_no_data(mock_telebot, mocker):
-    mocker.patch.object(delete, 'helper')
+    mocker.patch.object(remove, 'helper')
     remove.helper.read_json.return_value = {}
     remove.helper.write_json.return_value = True
     MOCK_Message_data = create_message("Hello")

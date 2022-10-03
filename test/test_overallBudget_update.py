@@ -1,4 +1,4 @@
-from code import overallBudget_update
+from main import overallBudget_update
 from mock import ANY
 from mock.mock import patch
 from telebot import types

@@ -9,7 +9,7 @@ By participating, you are expected to uphold this code. Please report unacceptab
 Prerequistes required before starting this project
 
 1. Must be a graduate student at NC State University
-2. Must be a student in Software Engineering Course in Fall 2022
+2. Must be a student in Software Engineering Course in Fall 2022d
 3. Have proficiency in Python
 
 ## How can I Contribute -

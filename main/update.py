@@ -1,5 +1,5 @@
 import re
-import utils
+from main import helper
 from telebot import types
 
 
@@ -7,7 +7,7 @@ def run(m, bot):
     chat_id = m.chat.id
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.row_width = 2
-    for c in utils.getUserHistory(chat_id):
+    for c in helper.getUserHistory(chat_id):
         expense_data = c.split(',')
         str_date = "Date=" + expense_data[0]
         str_category = ",\t\tCategory=" + expense_data[1]
@@ -32,7 +32,7 @@ def enter_updated_data(m, bot, selected_data):
     choice1 = "" if m.text is None else m.text
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.row_width = 2
-    for cat in utils.getSpendCategories():
+    for cat in helper.getSpendCategories():
         markup.add(cat)
 
     if 'Date' in choice1:
@@ -49,7 +49,7 @@ def enter_updated_data(m, bot, selected_data):
 
 
 def edit_date(m, bot, selected_data):
-    user_list = utils.read_json()
+    user_list = helper.read_json()
     new_date = "" if m.text is None else m.text
     date_format = r'^(([0][1-9])|([1-2][0-9])|([3][0-1]))\-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\-\d{4}$'
     x1 = re.search(date_format, new_date)
@@ -57,7 +57,7 @@ def edit_date(m, bot, selected_data):
         bot.reply_to(m, "The date is incorrect")
         return
     chat_id = m.chat.id
-    data_edit = utils.getUserHistory(chat_id)
+    data_edit = helper.getUserHistory(chat_id)
     for i in range(len(data_edit)):
         user_data = data_edit[i].split(',')
         selected_date = selected_data[0].split('=')[1]
@@ -68,14 +68,14 @@ def edit_date(m, bot, selected_data):
             break
 
     user_list[str(chat_id)]['data'] = data_edit
-    utils.write_json(user_list)
+    helper.write_json(user_list)
     bot.reply_to(m, "Date is updated")
 
 
 def edit_cat(m, bot, selected_data):
-    user_list = utils.read_json()
+    user_list = helper.read_json()
     chat_id = m.chat.id
-    data_edit = utils.getUserHistory(chat_id)
+    data_edit = helper.getUserHistory(chat_id)
     new_cat = "" if m.text is None else m.text
     for i in range(len(data_edit)):
         user_data = data_edit[i].split(',')
@@ -87,15 +87,15 @@ def edit_cat(m, bot, selected_data):
             break
 
     user_list[str(chat_id)]['data'] = data_edit
-    utils.write_json(user_list)
+    helper.write_json(user_list)
     bot.reply_to(m, "Category is updated")
 
 
 def edit_cost(m, bot, selected_data):
-    user_list = utils.read_json()
+    user_list = helper.read_json()
     new_cost = "" if m.text is None else m.text
     chat_id = m.chat.id
-    data_edit = utils.getUserHistory(chat_id)
+    data_edit = helper.getUserHistory(chat_id)
 
     if helper.validate_entered_amount(new_cost) != 0:
         for i in range(len(data_edit)):

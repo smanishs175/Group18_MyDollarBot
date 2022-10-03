@@ -1,20 +1,20 @@
 import time
-import utils
+from main import helper
 import logging
 from telebot import types
 
 
 def run(message, bot):
-    utils.read_json()
+    helper.read_json()
     chat_id = message.chat.id
-    history = utils.getUserHistory(chat_id)
+    history = helper.getUserHistory(chat_id)
     if history is None:
         bot.send_message(
             chat_id, "Oops! Looks like you do not have any spending records!")
     else:
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
         markup.row_width = 2
-        for mode in utils.getSpendEstimateOptions():
+        for mode in helper.getSpendEstimateOptions():
             markup.add(mode)
         # markup.add('Day', 'Month')
         msg = bot.reply_to(
@@ -28,12 +28,12 @@ def estimate_total(message, bot):
         chat_id = message.chat.id
         DayWeekMonth = message.text
 
-        if DayWeekMonth not in utils.getSpendEstimateOptions():
+        if DayWeekMonth not in helper.getSpendEstimateOptions():
             raise Exception(
                 "Sorry I can't show an estimate for \"{}\"!".format(
                     DayWeekMonth))
 
-        history = utils.getUserHistory(chat_id)
+        history = helper.getUserHistory(chat_id)
         if history is None:
             raise Exception(
                 "Oops! Looks like you do not have any spending records!")

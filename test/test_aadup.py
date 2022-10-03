@@ -36,7 +36,7 @@ def test_post_category_selection_noMatchingCategory(mock_telebot, mocker):
     mc.send_message.return_value = []
     mc.reply_to.return_value = True
 
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.getSpendCategories.return_value = None
 
     message = create_message("hello from testing!")
@@ -58,13 +58,13 @@ def test_post_amount_input_working(mock_telebot, mocker):
 def test_post_amount_input_working_withdata(mock_telebot, mocker):
     mc = mock_telebot.return_value
     mc.send_message.return_value = True
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.validate_entered_amount.return_value = 10
     addup.helper.write_json.return_value = True
     addup.helper.getDateFormat.return_value = dateFormat
     addup.helper.getTimeFormat.return_value = timeFormat
 
-    mocker.patch.object(add, 'option')
+    mocker.patch.object(addup, 'option')
     addup.option.return_value = {11, "here"}
 
     message = create_message("hello from testing!")
@@ -77,7 +77,7 @@ def test_post_amount_input_nonworking(mock_telebot, mocker):
     mc = mock_telebot.return_value
     mc.send_message.return_value = True
     mc.reply_to.return_value = True
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.validate_entered_amount.return_value = 0
     message = create_message("hello from testing!")
     addup.post_amount_input(message, mc, 'Food')
@@ -88,13 +88,13 @@ def test_post_amount_input_nonworking(mock_telebot, mocker):
 def test_post_amount_input_working_withdata_chatid(mock_telebot, mocker):
     mc = mock_telebot.return_value
     mc.send_message.return_value = True
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.validate_entered_amount.return_value = 10
     addup.helper.write_json.return_value = True
     addup.helper.getDateFormat.return_value = dateFormat
     addup.helper.getTimeFormat.return_value = timeFormat
 
-    mocker.patch.object(add, 'option')
+    mocker.patch.object(addup, 'option')
     addup.option = {11, "here"}
     test_option = {}
     test_option[11] = "here"
@@ -107,17 +107,17 @@ def test_post_amount_input_working_withdata_chatid(mock_telebot, mocker):
 
 
 def test_add_user_record_nonworking(mocker):
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.read_json.return_value = {}
-    addeduserrecord = add.add_user_record(1, "record : test")
+    addeduserrecord = addup.add_user_record(1, "record : test")
     assert(addeduserrecord)
 
 
 def test_add_user_record_working(mocker):
     MOCK_USER_DATA = test_read_json()
-    mocker.patch.object(add, 'helper')
+    mocker.patch.object(addup, 'helper')
     addup.helper.read_json.return_value = MOCK_USER_DATA
-    addeduserrecord = add.add_user_record(1, "record : test")
+    addeduserrecord = addup.add_user_record(1, "record : test")
     if(len(MOCK_USER_DATA) + 1 == len(addeduserrecord)):
         assert True
 

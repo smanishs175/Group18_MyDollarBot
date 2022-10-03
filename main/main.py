@@ -3,7 +3,7 @@
 import logging
 import telebot
 import time
-import utils
+import helper
 import update
 import pastrecord
 import show
@@ -41,12 +41,12 @@ bot.set_update_listener(listener)
 # defines how the /start and /help commands have to be handled/processed
 @bot.message_handler(commands=['start', 'menu'])
 def start_and_menu_command(m):
-    utils.read_json()
+    helper.read_json()
     global user_list
     chat_id = m.chat.id
 
     text_intro = "Welcome to TrackMyDollar - a simple solution to track your expenses! \nHere is a list of available commands, please enter a command of your choice so that I can assist you further: \n\n"
-    commands = utils.getCommands()
+    commands = helper.getCommands()
     for c in commands:  # generate help text out of the commands dictionary defined at the top
         text_intro += "/" + c + ": "
         text_intro += commands[c] + "\n\n"

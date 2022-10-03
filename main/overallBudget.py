@@ -1,5 +1,5 @@
 
-import utils
+from main import helper
 
 import overallBudget_view
 
@@ -24,7 +24,7 @@ def post_operation_selection(message, bot):
     try:
         chat_id = message.chat.id
         op = message.text
-        options = utils.getBudgetOptions()
+        options = helper.getBudgetOptions()
         if op not in options.values():
             bot.send_message(chat_id, 'Invalid', reply_markup=types.ReplyKeyboardRemove())
             raise Exception("Sorry I don't recognise this operation \"{}\"!".format(op))
@@ -36,4 +36,4 @@ def post_operation_selection(message, bot):
             overallBudget_delete.run(message, bot)
     except Exception as e:
         # print("hit exception")
-        utils.throw_exception(e, message, bot, logging)
+        helper.throw_exception(e, message, bot, logging)

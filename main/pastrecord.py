@@ -1,12 +1,12 @@
-import utils
+from main import helper
 import logging
 
 
 def run(message, bot):
     try:
-        utils.read_json()
+        helper.read_json()
         chat_id = message.chat.id
-        user_history = utils.getUserHistory(chat_id)
+        user_history = helper.getUserHistory(chat_id)
         spend_total_str = ""
         if user_history is None:
             raise Exception("Sorry! No spending records found!")
