@@ -56,21 +56,19 @@ def take_all_users_input(message, bot, selected_category):
         if not validate_email_input(email_ids):
             raise Exception(f"Sorry the email format is not correct: {emails}")
 
-        emails_user_map = {}
         user_list = helper.read_json()
+        emails_user_map = get_emails_ids_mapping(user_list)
 
-        for user in user_list:
-            if 'email' in user_list[user]:
-                emails_user_map[user_list[user]['email']] = user
-
-        creator = user_list[str(chat_id)]['email']
+        creator = str(user_list[str(chat_id)]['email'])
+        logging.log(level=logging.INFO, msg=creator)
         email_ids_present_in_expense = email_ids.intersection(set(emails_user_map.keys()))
         if len(email_ids_present_in_expense) != len(email_ids):
             invalid_emails = list(email_ids.difference(email_ids_present_in_expense))
             raise Exception(f"Sorry one or more of the email(s) are not registered with us: {invalid_emails}")
 
         email_ids_present_in_expense = list(email_ids_present_in_expense)
-        email_ids_present_in_expense.insert(creator, 0)
+        logging.log(level=logging.INFO, msg=email_ids_present_in_expense)
+        email_ids_present_in_expense.insert(0, creator)
 
         option[chat_id] = selected_category
         message = bot.send_message(chat_id, 'How much did you spend on {}? \n(Enter numeric values only)'.format(
@@ -113,9 +111,12 @@ def post_amount_input(message, bot, selected_category, email_ids_present_in_expe
         date_of_entry = str(datetime.today().strftime(helper.getDateFormat() + ' ' + helper.getTimeFormat()))
         transaction_record["created_at"] = date_of_entry
         transaction_record["updated_at"] = None
-        helper.write_json(add_transaction_record(transaction_record), filename=group_expense_file)
+        t_id, transaction_list = add_transaction_record(transaction_record)
+        helper.write_json(transaction_list, filename=group_expense_file)
+        updated_user_list = add_transactions_to_user(t_id, email_ids_present_in_expense)
+        helper.write_json(updated_user_list)
 
-        bot.send_message(chat_id, 'The following expenditure has been recorded: You, and {} other members, '
+        bot.send_message(chat_id, 'The following expenditure has been recorded: You, and {} other member(s), '
                                   'have spent ${} for {} on {}'.format(str(num_members - 1), str(member_share),
                                                                        str(selected_category), date_of_entry))
         helper.display_remaining_budget(message, bot, selected_category)
@@ -135,12 +136,12 @@ def add_transaction_record(transaction_record):
     transaction_list = helper.read_json(filename=group_expense_file)
     transaction_id = str(generate_transaction_id())
     transaction_list[transaction_id] = transaction_record
-    return transaction_list
+    return transaction_id, transaction_list
 
 
 def validate_email_input(email_ids):
     for email in email_ids:
-        if not validate_email(email, check_deliverability=True):
+        if not validate_email(email.strip(), check_deliverability=True):
             return False
 
     return True
@@ -148,3 +149,30 @@ def validate_email_input(email_ids):
 
 def generate_transaction_id():
     return random.randint(4000000000, 9999999999)
+
+
+def get_emails_ids_mapping(user_list):
+    emails_user_map = {}
+
+    for user in user_list:
+        if 'email' in user_list[user]:
+            emails_user_map[user_list[user]['email']] = user
+
+    return emails_user_map
+
+
+def add_transactions_to_user(transaction_id, email_ids):
+    transaction_list = helper.read_json(filename=group_expense_file)
+    user_list = helper.read_json()
+    emails_user_map = get_emails_ids_mapping(user_list)
+
+    if str(transaction_id) not in transaction_list:
+        raise Exception("Transaction {} does not exist".format(transaction_id))
+
+    for email in email_ids:
+        user_id = str(emails_user_map[email])
+        existing_transactions = user_list[user_id].get('transactions', [])
+        existing_transactions.append(transaction_id)
+        user_list[user_id]['transactions'] = list(set(existing_transactions))
+
+    return user_list
