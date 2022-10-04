@@ -1,0 +1,10 @@
+//"transaction"{
+//  "id": <id>
+//  "created_by": 34567,
+//  "details": {
+//    "user_id": amt
+//  },
+//  "category": <name>,
+//  "total": <total_amt>
+//}
+

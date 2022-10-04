@@ -32,15 +32,25 @@ data_format = {
 }
 
 # set of implemented commands and their description
+# commands = {
+#     'menu': 'Display this menu',
+#     'add': 'Record/Add a new spending',
+#     'display': 'Show sum of expenditure for the current day/month',
+#     'estimate': 'Show an estimate of expenditure for the next day/month',
+#     'history': 'Display spending history',
+#     'delete': 'Clear/Erase all your records',
+#     'edit': 'Edit/Change spending details',
+#     'budget': 'Add/Update/View/Delete budget'
+# }
+
 commands = {
     'menu': 'Display this menu',
     'add': 'Record/Add a new spending',
+    'addGroup': 'Add a group expense',
     'display': 'Show sum of expenditure for the current day/month',
-    'estimate': 'Show an estimate of expenditure for the next day/month',
     'history': 'Display spending history',
-    'delete': 'Clear/Erase all your records',
-    'edit': 'Edit/Change spending details',
-    'budget': 'Add/Update/View/Delete budget'
+    'reset': 'Clear/Erase all your records',
+    'edit': 'Edit/Change spending details'
 }
 
 dateFormat = '%d-%b-%Y'
