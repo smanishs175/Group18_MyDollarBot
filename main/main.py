@@ -56,15 +56,15 @@ def start_and_menu_command(m):
     return True
 
 
-# defines how the /new command has to be handled/processed
+# function to add a new individual expense
 @bot.message_handler(commands=['add'])
 def command_addup(message):
     addup.run(message, bot)
 
 
-# defines how the /new command has to be handled/processed
+# function to add a new group expense
 @bot.message_handler(commands=['addGroup'])
-def command_addup(message):
+def command_addgroup(message):
     add_group.run(message, bot)
 
 # function to fetch expenditure pastrecord of the user

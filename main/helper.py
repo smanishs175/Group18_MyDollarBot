@@ -56,17 +56,19 @@ commands = {
 dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
+expenseFile = "expense_record.json"
+groupExpenseFile = "group_expenses.json"
 
 
 # function to load .json expense record data
-def read_json():
+def read_json(filename=expenseFile):
     try:
-        if not os.path.exists('expense_record.json'):
-            with open('expense_record.json', 'w') as json_file:
+        if not os.path.exists(filename):
+            with open(filename, 'w') as json_file:
                 json_file.write('{}')
             return json.dumps('{}')
-        elif os.stat('expense_record.json').st_size != 0:
-            with open('expense_record.json') as expense_record:
+        elif os.stat(filename).st_size != 0:
+            with open(filename) as expense_record:
                 expense_record_data = json.load(expense_record)
             return expense_record_data
 
@@ -74,9 +76,9 @@ def read_json():
         print("---------NO RECORDS FOUND---------")
 
 
-def write_json(user_list):
+def write_json(user_list, filename=expenseFile):
     try:
-        with open('expense_record.json', 'w') as json_file:
+        with open(filename, 'w') as json_file:
             json.dump(user_list, json_file, ensure_ascii=False, indent=4)
     except FileNotFoundError:
         print('Sorry, the data file could not be found.')
