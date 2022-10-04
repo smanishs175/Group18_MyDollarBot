@@ -54,10 +54,10 @@ def take_all_users_input(message, bot, selected_category):
         # print(user_list)
         for user in user_list:
             if 'email' in user_list[user]:
-                emails_user_map[user_list[user]['email']]=chat_id
+                emails_user_map[user_list[user]['email']]= user
 
         user_ids_present_in_expense = []
-        for email in emails.split(","):
+        for email in set(emails.split(",")):
             if email not in emails_user_map:
                 raise Exception(f"Sorry one of the email is not registered with us: {email}")
 
