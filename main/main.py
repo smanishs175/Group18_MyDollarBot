@@ -32,6 +32,7 @@ option = {}
 def listener(user_requests):
     for req in user_requests:
         if(req.content_type == 'text'):
+            print(req)
             print("{} name:{} chat_id:{} \nmessage: {}\n".format(str(datetime.now()), str(req.chat.first_name), str(req.chat.id), str(req.text)))
 
 
@@ -59,6 +60,11 @@ def start_and_menu_command(m):
 def command_addup(message):
     addup.run(message, bot)
 
+
+# defines how the /new command has to be handled/processed
+@bot.message_handler(commands=['addGroup'])
+def command_addup(message):
+    addup.run(message, bot)
 
 # function to fetch expenditure pastrecord of the user
 @bot.message_handler(commands=['pastrecord'])
