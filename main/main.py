@@ -5,7 +5,7 @@ import telebot
 import time
 import helper
 import update
-import pastrecord
+import history
 import show
 import calculate
 import remove
@@ -47,7 +47,9 @@ def start_and_menu_command(m):
     global user_list
     chat_id = m.chat.id
 
-    text_intro = "Welcome to TrackMyDollar - a simple solution to track your expenses! \nHere is a list of available commands, please enter a command of your choice so that I can assist you further: \n\n"
+    text_intro = "Welcome to WalletBuddy - a simple solution to track your expenses! \n" \
+                 "Here is a list of available commands, please enter a command of your choice " \
+                 "so that I can assist you further: \n\n"
     commands = helper.getCommands()
     for c in commands:  # generate help text out of the commands dictionary defined at the top
         text_intro += "/" + c + ": "
@@ -70,12 +72,12 @@ def command_addgroup(message):
 # function to fetch expenditure pastrecord of the user
 @bot.message_handler(commands=['pastrecord'])
 def command_pastrecord(message):
-    pastrecord.run(message, bot)
+    history.run(message, bot)
 
 # function to fetch expenditure history of the user
 @bot.message_handler(commands=['history'])
 def command_history(message):
-    pastrecord.run(message, bot)
+    history.run(message, bot)
 
 
 # function to edit date, category or cost of a transaction

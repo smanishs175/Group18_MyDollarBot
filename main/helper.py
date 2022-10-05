@@ -68,9 +68,9 @@ def read_json(filename=expenseFile):
                 json_file.write('{}')
             return json.dumps('{}')
         elif os.stat(filename).st_size != 0:
-            with open(filename) as expense_record:
-                expense_record_data = json.load(expense_record)
-            return expense_record_data
+            with open(filename) as records:
+                file_data = json.load(records)
+            return file_data
 
     except FileNotFoundError:
         print("---------NO RECORDS FOUND---------")
@@ -94,6 +94,7 @@ def validate_entered_amount(amount_entered):
     return 0
 
 
+# TODO: remove this
 def getUserHistory(chat_id):
     data = getUserData(chat_id)
     if data is not None:
@@ -105,7 +106,7 @@ def getUserData(chat_id):
     user_list = read_json()
     if user_list is None:
         return None
-    if (str(chat_id) in user_list):
+    if str(chat_id) in user_list:
         return user_list[str(chat_id)]
     return None
 
