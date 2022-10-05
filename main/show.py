@@ -3,7 +3,7 @@ import os
 
 from main import helper
 
-import graph
+# import graph
 import logging
 from telebot import types
 from datetime import datetime
