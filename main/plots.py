@@ -68,3 +68,39 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
     label_amount(sum_df['Amount'])
     plt.bar(sum_df['Month'],sum_df['Amount'],color='rgbymck')
     #plt.savefig('expenditure.png', bbox_inches='tight')
+    
+    
+def owe(chat_id):
+    all_ids = []
+    for j in final_dict[chat_id]['transactions']:
+        all_ids+= transaction_dict[j]['members'].keys()
+        all_ids = list(set(all_ids))
+        all_ids.remove(chat_id)
+    
+    owe_dict = {}
+    for m in all_ids:
+        owe_dict[m] = []    
+    for j in final_dict[chat_id]['transactions']:
+        temp_dict = transaction_dict[j]
+        creator_id = temp_dict['created_by']
+        if chat_id == creator_id:
+            for c_id in temp_dict['members'].keys():
+                if c_id != chat_id:
+                    owe_dict[c_id] = owe_dict[c_id] + [temp_dict['members'][c_id]]
+        else:
+            owe_dict[creator_id] = owe_dict[creator_id] + [-1 * (temp_dict['members'][chat_id] )]
+    
+    x,y= [] , [] 
+    for k in owe_dict.keys():
+        val = owe_dict[k] 
+        if val != []:
+            x.append(user_key[k])
+            y.append(sum(val)*-1)# what I owe will be positive on plot
+            
+    plt.title("What I owe")
+    plt.ylabel('Amount ($)')
+    plt.xlabel('User')
+    #plt.xticks(rotation=45)
+    label_amount(y)
+    plt.bar(x,y,color='rgbymck')
+    #plt.savefig('expenditure.png', bbox_inches='tight')
