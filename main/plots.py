@@ -15,6 +15,10 @@ dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
 
+month_dict = {1 : 'Jan', 2 : 'Feb', 3 : 'Mar',
+              4 : 'Mar', 5 : 'Apr', 6 : 'Jun',
+              7 : 'Jul', 8 : 'Aug', 9 : 'Sep',
+              10: 'Oct', 11: 'Nov', 12: 'Dec'}
 
 def label_amount(y):
     for ind,val in enumerate(y):
@@ -46,4 +50,21 @@ def overall_plot(chat_id, start_date, end_date):
     plt.xticks(rotation=45)
     label_amount(sum_df['Amount'])
     plt.bar(sum_df['Category'],sum_df['Amount'],color='rgbymck')
+    #plt.savefig('expenditure.png', bbox_inches='tight')
+    
+    
+def categorical_plot(chat_id, start_date, end_date,selected_cat):  
+    total_expenses_df = get_amount_df(chat_id,type="overall")
+    total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
+    total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
+    total_expenses_df = total_expenses_df[total_expenses_df['Category'].isin([selected_cat])]
+    total_expenses_df['Month'] = total_expenses_df['Date'].apply(lambda x: month_dict[x.month])
+    sum_df = total_expenses_df[['Month','Amount']].groupby(['Month'],as_index = False).sum()
+    
+    plt.title("Expenses (for the Dates Selected)")
+    plt.ylabel('Amount ($)')
+    plt.xlabel('Month')
+    #plt.xticks(rotation=45)
+    label_amount(sum_df['Amount'])
+    plt.bar(sum_df['Month'],sum_df['Amount'],color='rgbymck')
     #plt.savefig('expenditure.png', bbox_inches='tight')
