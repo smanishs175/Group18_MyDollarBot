@@ -6,19 +6,24 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
 import helper
-
-
 
 
 dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
-
+expenseFile = "expense_record.json"
+transactionFile = "transaction_record.json"
 month_dict = {1 : 'Jan', 2 : 'Feb', 3 : 'Mar',
               4 : 'Mar', 5 : 'Apr', 6 : 'Jun',
               7 : 'Jul', 8 : 'Aug', 9 : 'Sep',
               10: 'Oct', 11: 'Nov', 12: 'Dec'}
+
+
+## getting json files
+expense_dict = helper.read_json(expenseFile)
+transaction_dict = helper.read_json(transactionFile)
 
 def label_amount(y):
     for ind,val in enumerate(y):
@@ -28,9 +33,9 @@ def get_amount_df(chat_id,type="overall"):
     ### plot overall expenses
     individual_expenses, shared_expenses = [] ,[]
     if type not in ["shared"]:
-        for i in final_dict[chat_id]['data']:
+        for i in expense_dict[chat_id]['data']:
             individual_expenses.append(i.split(','))
-    for j in final_dict[chat_id]['transactions']:
+    for j in expense_dict[chat_id]['transactions']:
         temp_dict = transaction_dict[j]
         shared_expenses.append([temp_dict['created_at'], temp_dict['category'],temp_dict['members'][chat_id]])       
     total_expenses = individual_expenses + shared_expenses
@@ -72,7 +77,7 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
     
 def owe(chat_id):
     all_ids = []
-    for j in final_dict[chat_id]['transactions']:
+    for j in expense_dict[chat_id]['transactions']:
         all_ids+= transaction_dict[j]['members'].keys()
         all_ids = list(set(all_ids))
         all_ids.remove(chat_id)
@@ -80,7 +85,7 @@ def owe(chat_id):
     owe_dict = {}
     for m in all_ids:
         owe_dict[m] = []    
-    for j in final_dict[chat_id]['transactions']:
+    for j in expense_dict[chat_id]['transactions']:
         temp_dict = transaction_dict[j]
         creator_id = temp_dict['created_by']
         if chat_id == creator_id:
