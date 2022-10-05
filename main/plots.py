@@ -54,8 +54,8 @@ def overall_plot(chat_id, start_date, end_date):
     plt.xlabel('Category')
     plt.xticks(rotation=45)
     label_amount(sum_df['Amount'])
-    plt.bar(sum_df['Category'],sum_df['Amount'],color='rgbymck')
-    #plt.savefig('expenditure.png', bbox_inches='tight')
+    plt.bar(sum_df['Category'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
+    plt.savefig('overall_expenses.png', bbox_inches='tight')
     
     
 def categorical_plot(chat_id, start_date, end_date,selected_cat):  
@@ -71,8 +71,8 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
     plt.xlabel('Month')
     #plt.xticks(rotation=45)
     label_amount(sum_df['Amount'])
-    plt.bar(sum_df['Month'],sum_df['Amount'],color='rgbymck')
-    #plt.savefig('expenditure.png', bbox_inches='tight')
+    plt.bar(sum_df['Month'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
+    plt.savefig('categorical_expenses.png', bbox_inches='tight')
     
     
 def owe(chat_id):
@@ -107,5 +107,8 @@ def owe(chat_id):
     plt.xlabel('User')
     #plt.xticks(rotation=45)
     label_amount(y)
-    plt.bar(x,y,color='rgbymck')
-    #plt.savefig('expenditure.png', bbox_inches='tight')
+    plt.bar(x,y,color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
+    plt.savefig('owe.png', bbox_inches='tight')
+    
+    
+
