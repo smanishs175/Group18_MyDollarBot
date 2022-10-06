@@ -1,5 +1,5 @@
 import re
-import helper
+from main import helper
 from telebot import types
 
 

@@ -1,5 +1,5 @@
 import time
-import helper
+from main import helper
 import logging
 from telebot import types
 

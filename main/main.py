@@ -12,13 +12,8 @@ import remove
 import addup
 import add_group
 import overallBudget
-import display
 from datetime import datetime
-import display_calender
 from jproperties import Properties
-from telebot.types import ReplyKeyboardRemove, CallbackQuery
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-
 
 configs = Properties()
 
@@ -92,7 +87,7 @@ def command_edit(message):
 # function to display total expenditure
 @bot.message_handler(commands=['display'])
 def command_display(message):
-    display.run(message, bot)
+    show.run(message, bot)
 
 
 # function to estimate future expenditure
@@ -142,13 +137,6 @@ def command_remove(message):
 @bot.message_handler(commands=['overallBudget'])
 def command_overallBudget(message):
     overallBudget.run(message, bot)
-
-#function to show calender for user to select dates
-@bot.callback_query_handler(
-    func=lambda call: call.data.startswith(helper.calendar_1_callback.prefix)
-)
-def callback_inline(call: CallbackQuery):
-    display_calender.run(call,bot)
 
 
 # not used
