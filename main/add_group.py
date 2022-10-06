@@ -12,7 +12,8 @@ random.seed(2022)
 
 
 def run(message, bot):
-    helper.read_json(filename=group_expense_file)
+    helper.read_json(helper.getUserExpensesFile())
+    helper.read_json(helper.getGroupExpensesFile())
     chat_id = message.chat.id
     option.pop(chat_id, None)  # remove temp choicex
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
@@ -48,7 +49,7 @@ def expense_category_input(message, bot):
 
 
 def take_all_users_input(message, bot, selected_category):
-    chat_id = message.chat.id
+    chat_id = str(message.chat.id)
     try:
         emails = message.text
         email_ids = set(emails.split(","))
@@ -56,11 +57,14 @@ def take_all_users_input(message, bot, selected_category):
         if not validate_email_input(email_ids):
             raise Exception(f"Sorry the email format is not correct: {emails}")
 
-        user_list = helper.read_json()
+        user_list = helper.read_json(helper.getUserExpensesFile())
         emails_user_map = get_emails_ids_mapping(user_list)
 
-        creator = str(user_list[str(chat_id)]['email'])
-        logging.log(level=logging.INFO, msg=creator)
+        if 'email' not in user_list[chat_id]:
+            # TODO: profile error message
+            raise Exception(f"Error")
+
+        creator = str(user_list[chat_id]['email'])
         email_ids_present_in_expense = email_ids.intersection(set(emails_user_map.keys()))
         if len(email_ids_present_in_expense) != len(email_ids):
             invalid_emails = list(email_ids.difference(email_ids_present_in_expense))
@@ -112,9 +116,9 @@ def post_amount_input(message, bot, selected_category, email_ids_present_in_expe
         transaction_record["created_at"] = date_of_entry
         transaction_record["updated_at"] = None
         t_id, transaction_list = add_transaction_record(transaction_record)
-        helper.write_json(transaction_list, filename=group_expense_file)
+        helper.write_json(transaction_list, helper.getGroupExpensesFile())
         updated_user_list = add_transactions_to_user(t_id, email_ids_present_in_expense)
-        helper.write_json(updated_user_list)
+        helper.write_json(updated_user_list, helper.getUserExpensesFile())
 
         bot.send_message(chat_id, 'The following expenditure has been recorded: You, and {} other member(s), '
                                   'have spent ${} for {} on {}'.format(str(num_members - 1), str(member_share),
@@ -133,7 +137,7 @@ def post_amount_input(message, bot, selected_category, email_ids_present_in_expe
 
 
 def add_transaction_record(transaction_record):
-    transaction_list = helper.read_json(filename=group_expense_file)
+    transaction_list = helper.read_json(helper.getGroupExpensesFile())
     transaction_id = str(generate_transaction_id())
     transaction_list[transaction_id] = transaction_record
     return transaction_id, transaction_list
@@ -162,8 +166,8 @@ def get_emails_ids_mapping(user_list):
 
 
 def add_transactions_to_user(transaction_id, email_ids):
-    transaction_list = helper.read_json(filename=group_expense_file)
-    user_list = helper.read_json()
+    transaction_list = helper.read_json(helper.getGroupExpensesFile())
+    user_list = helper.read_json(helper.getUserExpensesFile())
     emails_user_map = get_emails_ids_mapping(user_list)
 
     if str(transaction_id) not in transaction_list:
@@ -171,8 +175,8 @@ def add_transactions_to_user(transaction_id, email_ids):
 
     for email in email_ids:
         user_id = str(emails_user_map[email])
-        existing_transactions = user_list[user_id].get('transactions', [])
+        existing_transactions = user_list[user_id].get('group_expenses', [])
         existing_transactions.append(transaction_id)
-        user_list[user_id]['transactions'] = list(set(existing_transactions))
+        user_list[user_id]['group_expenses'] = list(set(existing_transactions))
 
     return user_list

@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 def run(message, bot):
-    helper.read_json()
+    helper.read_json(helper.getUserExpensesFile())
     chat_id = message.chat.id
     history = helper.getUserHistory(chat_id)
     if history is None:

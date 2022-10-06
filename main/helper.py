@@ -111,11 +111,21 @@ def createNewUserRecord():
 
 
 def getSpendCategories():
-    return config['settings']['ExpenseCategories']
+    categories = config.get('settings', 'ExpenseCategories')
+    categories = categories.split(",")
+    return categories
 
 
 def getSpendDisplayOptions():
-    return config['settings']['DisplayChoices']
+    choices = config.get('settings', 'DisplayChoices')
+    choices = choices.split(",")
+    return choices
+
+
+def getExpenseChoices():
+    choices = config.get('settings', 'ExpenseChoices')
+    choices = choices.split(",")
+    return choices
 
 
 def getCommands():
@@ -132,10 +142,6 @@ def getTimeFormat():
 
 def getMonthFormat():
     return monthFormat
-
-
-def getChoices():
-    return config['settings']['ExpenseChoices']
 
 
 def getApiToken():

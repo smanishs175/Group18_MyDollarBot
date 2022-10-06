@@ -5,9 +5,9 @@ def run(message, bot):
     global user_list
     chat_id = message.chat.id
     delete_history_text = ""
-    user_list = helper.read_json()
-    if (str(chat_id) in user_list):
-        helper.write_json(deleteHistory(chat_id))
+    user_list = helper.read_json(helper.getUserExpensesFile())
+    if str(chat_id) in user_list:
+        helper.write_json(deleteHistory(chat_id), helper.getUserExpensesFile())
         delete_history_text = "History has been deleted!"
     else:
         delete_history_text = "No records there to be deleted. Start adding your expenses to keep track of your spendings!"
