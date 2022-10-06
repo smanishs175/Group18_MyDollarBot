@@ -96,7 +96,7 @@ def post_amount_input(message, bot, selected_category, email_ids_present_in_expe
             raise Exception("Spent amount has to be a non-zero number.")
         amount_value = float(amount_value)
 
-        # TODO add group expenses handling
+
         num_members = len(email_ids_present_in_expense)
         member_share = amount_value / num_members
         transaction_record["total"] = amount_value
