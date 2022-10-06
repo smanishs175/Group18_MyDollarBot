@@ -2,6 +2,7 @@ import re
 import json
 import os
 from datetime import datetime
+import configparser
 
 user_expenses_format = {
     "personal_expenses": [],

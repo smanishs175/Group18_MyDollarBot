@@ -12,7 +12,6 @@ import add_group
 
 from datetime import datetime
 from jproperties import Properties
-import configparser
 
 # helper.setConfig()
 helper.loadConfig()
