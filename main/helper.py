@@ -28,12 +28,12 @@ configFileName = "config.ini"
 
 
 def setConfig():
-    config["Files"] = {
+    config["files"] = {
         "UserExpenses": "user_expenses.json",
         "GroupExpenses": "group_expenses.json",
         "UserProfile": "user_emails.json"
     }
-    config["Settings"] = {
+    config["settings"] = {
         "ApiToken": "",
         "ExpenseCategories": ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous'],
         "ExpenseChoices": ['Date', 'Category', 'Cost'],
@@ -49,17 +49,17 @@ def loadConfig():
 
 
 def getUserExpensesFile():
-    filename = config['Files']['UserExpenses']
+    filename = config['files']['UserExpenses']
     return os.path.join("data", filename)
 
 
 def getGroupExpensesFile():
-    filename = config['Files']['GroupExpenses']
+    filename = config['files']['GroupExpenses']
     return os.path.join("data", filename)
 
 
 def getUserProfileFile():
-    filename = config['Files']['UserProfile']
+    filename = config['files']['UserProfile']
     return os.path.join("data", filename)
 
 
@@ -111,11 +111,11 @@ def createNewUserRecord():
 
 
 def getSpendCategories():
-    return config['Settings']['ExpenseCategories']
+    return config['settings']['ExpenseCategories']
 
 
 def getSpendDisplayOptions():
-    return config['Settings']['DisplayChoices']
+    return config['settings']['DisplayChoices']
 
 
 def getCommands():
@@ -135,4 +135,4 @@ def getMonthFormat():
 
 
 def getChoices():
-    return config['Settings']['ExpenseChoices']
+    return config['settings']['ExpenseChoices']
