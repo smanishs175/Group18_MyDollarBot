@@ -7,7 +7,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import helper
-
+import numpy as np
+ 
 
 dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
@@ -21,8 +22,8 @@ month_dict = {1 : 'Jan', 2 : 'Feb', 3 : 'Mar',
 
 user_key = {"5718815807": "palash_jhamb@outlook.com",
                 "5745784966": "nihar.rao@gmail.com",
-                "5894238281": "manish.shinde@gmail.com",
-                "5706237421": "shruti.v@gmail.com"}
+                "5706237421": "shruti.v@gmail.com",
+                '5713840988': "saksham.pandey@gmail.com"}
 
 ## getting json files
 expense_dict = helper.read_json(expenseFile)
@@ -35,7 +36,6 @@ def label_amount(y):
 def get_amount_df(chat_id,type="overall"):
     ### plot overall expenses
     individual_expenses, shared_expenses = [] ,[]
-    print(expense_dict)
     if type not in ["shared"]:
         for i in expense_dict[chat_id]['data']:
             individual_expenses.append(i.split(','))
@@ -54,6 +54,8 @@ def overall_plot(chat_id, start_date, end_date):
     total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
     total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
     sum_df = total_expenses_df[['Category','Amount']].groupby(['Category'],as_index = False).sum()
+    rand_val = np.random.randint(1,5000)
+    plt.figure(rand_val)
     plt.title("Total Expenses (for the Dates Selected)")
     plt.ylabel('Amount ($)')
     plt.xlabel('Category')
@@ -70,7 +72,8 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
     total_expenses_df = total_expenses_df[total_expenses_df['Category'].isin([selected_cat])]
     total_expenses_df['Month'] = total_expenses_df['Date'].apply(lambda x: month_dict[x.month])
     sum_df = total_expenses_df[['Month','Amount']].groupby(['Month'],as_index = False).sum()
-
+    rand_val = np.random.randint(5001,10000)
+    plt.figure(rand_val)
     plt.title("Expenses (for the Dates Selected)")
     plt.ylabel('Amount ($)')
     plt.xlabel('Month')
@@ -109,7 +112,9 @@ def owe(chat_id):
         if val != []:
             x.append(user_key[k])
             y.append(sum(val)*-1)# what I owe will be positive on plot
-            
+
+    rand_val = np.random.randint(10001,15000)
+    plt.figure(rand_val)            
     plt.title("What I owe")
     plt.ylabel('Amount ($)')
     plt.xlabel('User')
