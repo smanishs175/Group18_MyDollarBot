@@ -1,6 +1,6 @@
 import os
 import json
-from main import remove
+from main import erase
 from mock import patch
 from telebot import types
 
@@ -29,25 +29,25 @@ def create_message(text):
 @patch('telebot.telebot')
 def test_delete_run_with_data(mock_telebot, mocker):
     MOCK_USER_DATA = test_read_json()
-    mocker.patch.object(remove, 'helper')
-    remove.helper.read_json.return_value = MOCK_USER_DATA
+    mocker.patch.object(erase, 'helper')
+    erase.helper.read_json.return_value = MOCK_USER_DATA
     print("Hello", MOCK_USER_DATA)
-    remove.helper.write_json.return_value = True
+    erase.helper.write_json.return_value = True
     MOCK_Message_data = create_message("Hello")
     mc = mock_telebot.return_value
     mc.send_message.return_value = True
-    remove.run(MOCK_Message_data, mc)
-    assert(remove.helper.write_json.called)
+    erase.run(MOCK_Message_data, mc)
+    assert(erase.helper.write_json.called)
 
 
 @patch('telebot.telebot')
 def test_delete_with_no_data(mock_telebot, mocker):
-    mocker.patch.object(remove, 'helper')
-    remove.helper.read_json.return_value = {}
-    remove.helper.write_json.return_value = True
+    mocker.patch.object(erase, 'helper')
+    erase.helper.read_json.return_value = {}
+    erase.helper.write_json.return_value = True
     MOCK_Message_data = create_message("Hello")
     mc = mock_telebot.return_value
     mc.send_message.return_value = True
-    remove.run(MOCK_Message_data, mc)
-    if remove.helper.write_json.called is False:
+    erase.run(MOCK_Message_data, mc)
+    if erase.helper.write_json.called is False:
         assert True

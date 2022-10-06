@@ -1,14 +1,12 @@
 from main import helper
 import logging
 
-group_expenses_file = "group_expenses.json"
-
 
 def run(message, bot):
     try:
-        helper.read_json()
+        helper.read_json(helper.getUserExpensesFile())
         chat_id = message.chat.id
-        user_data = helper.getUserData(chat_id)
+        user_data = helper.getUserHistory(chat_id)
 
         if user_data is None:
             raise Exception("Sorry! No spending records found!")

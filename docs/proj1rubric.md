@@ -66,18 +66,18 @@
  </tr>
  <tr>
     <td>Use of version control tools</td>
-    <td>Two</td>
+    <td>Three</td>
     <td></td>
  </tr>
   <tr>
     <td>Use of style checkers</td>
-    <td>Zero</td>
-    <td></td>
+    <td>Two</td>
+    <td>Python's default pep8 checker in pycharm/VS code</td>
  </tr>
  <tr>
     <td>Use of code formatters</td>
-    <td>Zero</td>
-    <td></td>
+    <td>Three</td>
+    <td>auto indent feature in VS code, Pycharm or any IDE </td>
  </tr>
  <tr>
     <td>Use of syntax checkers.</td>
