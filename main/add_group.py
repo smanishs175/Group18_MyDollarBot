@@ -1,5 +1,5 @@
 # import helper
-from main import helper
+import helper
 import logging
 from telebot import types
 from datetime import datetime

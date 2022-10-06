@@ -1,5 +1,5 @@
 
-from main import helper
+import helper
 
 import overallBudget_view
 

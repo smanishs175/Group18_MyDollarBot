@@ -1,4 +1,4 @@
-from main import helper
+import helper
 import logging
 
 
