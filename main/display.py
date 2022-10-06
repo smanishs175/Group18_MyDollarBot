@@ -71,14 +71,18 @@ def show_categories(message,bot):
         bot.reply_to(message, str(e))
 
 
-def expense_category(message,bot,start_date,end_date):
+def expense_category(message,bot):
     try:
+        start_date=helper.date_range[0]
+        end_date=helper.date_range[1]
+        print(start_date)
+        print(end_date)
         chat_id = message.chat.id
         choice_category = message.text
         if not choice_category in helper.spend_categories:
             raise Exception("Sorry I can't show spendings for \"{}\"!".format(choice_category))
 
-        plots.categorical_plot(str(chat_id),message, start_date, end_date, choice_category)
+        plots.categorical_plot(str(chat_id), start_date, end_date, choice_category)
         print("executed")
         bot.send_photo(chat_id, photo=open('categorical_expenses.png', 'rb'))
         os.remove('categorical_expenses.png')
@@ -87,49 +91,49 @@ def expense_category(message,bot,start_date,end_date):
         bot.reply_to(message, str(e))
 
 def display_total(message,bot):
-    try:
+    # try:
+    chat_id = message.chat.id
+    choice = message.text
+    start_date = helper.date_range[0]
+    end_date = helper.date_range[1]
+
+    if not choice in helper.spend_display_option:
+        raise Exception("Sorry I can't show spendings for \"{}\"!".format(choice))
+
+    history = helper.getUserHistory(chat_id)
+    if history is None:
+        raise Exception("Oops! Looks like you do not have any spending records!")
+
+
+    bot.send_chat_action(chat_id, 'typing')  # show the bot "typing" (max. 5 secs)
+    time.sleep(0.5)
+
+    total_text = ""
+
+    if choice == 'All Expenses':
+        plots.overall_plot(str(chat_id), start_date, end_date)
+        bot.send_photo(chat_id, photo=open('overall_expenses.png', 'rb'))
+        os.remove('overall_expenses.png')
+
+    elif choice == 'Category Wise':
+        # helper.read_json()
         chat_id = message.chat.id
-        choice = message.text
-        start_date = helper.date_range[0]
-        end_date = helper.date_range[1]
-
-        if not choice in helper.spend_display_option:
-            raise Exception("Sorry I can't show spendings for \"{}\"!".format(choice))
-
-        history = helper.getUserHistory(chat_id)
-        if history is None:
-            raise Exception("Oops! Looks like you do not have any spending records!")
+        # helper.option.pop(chat_id, None)  # remove temp choice
+        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+        markup.row_width = 2
+        for c in helper.spend_categories:
+            markup.add(c)
+        msg = bot.reply_to(message, 'Select Category', reply_markup=markup)
+        bot.register_next_step_handler(msg, expense_category,bot)
 
 
-        bot.send_chat_action(chat_id, 'typing')  # show the bot "typing" (max. 5 secs)
-        time.sleep(0.5)
-
-        total_text = ""
-
-        if choice == 'All Expenses':
-            plots.overall_plot(str(chat_id), start_date, end_date)
-            bot.send_photo(chat_id, photo=open('overall_expenses.png', 'rb'))
-            os.remove('overall_expenses.png')
-
-        elif choice == 'Category Wise':
-            helper.read_json()
-            chat_id = message.chat.id
-            helper.option.pop(chat_id, None)  # remove temp choice
-            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-            markup.row_width = 2
-            for c in helper.spend_categories:
-                markup.add(c)
-            msg = bot.reply_to(message, 'Select Category', reply_markup=markup)
-            bot.register_next_step_handler(msg, expense_category,bot,start_date,end_date)
+    elif choice=='Shared Expense':
+        plots.owe(str(chat_id))
+        bot.send_photo(chat_id, photo=open('owe.png', 'rb'))
+        os.remove('owe.png')
 
 
-        elif choice=='Shared Expense':
-            plots.owe(str(chat_id))
-            bot.send_photo(chat_id, photo=open('owe.png', 'rb'))
-            os.remove('owe.png')
-
-
-    except Exception as e:
-        bot.reply_to(message, str(e))
+    # except Exception as e:
+    #     bot.reply_to(message, str(e))
 
 
