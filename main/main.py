@@ -36,7 +36,6 @@ bot.set_update_listener(listener)
 # defines how the /start and /help commands have to be handled/processed
 @bot.message_handler(commands=['start', 'menu'])
 def start_and_menu_command(m):
-    helper.read_json()
     chat_id = m.chat.id
 
     text_intro = "Welcome to WalletBuddy - a one-stop solution to track your expenses with your friends! \n" \
@@ -79,12 +78,6 @@ def command_display(message):
 @bot.message_handler(commands=['erase'])
 def command_delete(message):
     erase.run(message, bot)
-
-
-# function to manage user profile
-@bot.message_handler(commands=['profile'])
-def command_delete(message):
-    profile.run(message, bot)
 
 
 def main():

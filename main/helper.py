@@ -136,3 +136,7 @@ def getMonthFormat():
 
 def getChoices():
     return config['settings']['ExpenseChoices']
+
+
+def getApiToken():
+    return config['settings']['ApiToken']
