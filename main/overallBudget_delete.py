@@ -1,4 +1,4 @@
-from main import helper
+import helper
 
 
 def run(message, bot):
