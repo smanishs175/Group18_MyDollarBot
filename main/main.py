@@ -9,7 +9,7 @@ import display
 import erase
 import add
 import add_group
-import profile
+
 from datetime import datetime
 from jproperties import Properties
 import configparser
