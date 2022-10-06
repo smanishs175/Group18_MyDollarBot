@@ -1,8 +1,7 @@
-
-
 import time
 import os
-import helper
+
+from main import helper
 
 # import graph
 import logging
