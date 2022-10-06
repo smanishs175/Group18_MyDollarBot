@@ -123,7 +123,6 @@ def post_amount_input(message, bot, selected_category, email_ids_present_in_expe
         bot.send_message(chat_id, 'The following expenditure has been recorded: You, and {} other member(s), '
                                   'have spent ${} for {} on {}'.format(str(num_members - 1), str(member_share),
                                                                        str(selected_category), date_of_entry))
-        helper.display_remaining_budget(message, bot, selected_category)
     except Exception as e:
         logging.exception(str(e))
         bot.reply_to(message, 'Oh no. ' + str(e))
