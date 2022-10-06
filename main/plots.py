@@ -6,7 +6,6 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
-
 import helper
 
 
@@ -20,6 +19,10 @@ month_dict = {1 : 'Jan', 2 : 'Feb', 3 : 'Mar',
               7 : 'Jul', 8 : 'Aug', 9 : 'Sep',
               10: 'Oct', 11: 'Nov', 12: 'Dec'}
 
+user_key = {"5718815807": "palash_jhamb@outlook.com",
+                "5745784966": "nihar.rao@gmail.com",
+                "5894238281": "manish.shinde@gmail.com",
+                "5706237421": "shruti.v@gmail.com"}
 
 ## getting json files
 expense_dict = helper.read_json(expenseFile)
@@ -32,9 +35,11 @@ def label_amount(y):
 def get_amount_df(chat_id,type="overall"):
     ### plot overall expenses
     individual_expenses, shared_expenses = [] ,[]
+    print(expense_dict)
     if type not in ["shared"]:
         for i in expense_dict[chat_id]['data']:
             individual_expenses.append(i.split(','))
+    print("get amount expense dict run")
     for j in expense_dict[chat_id]['transactions']:
         temp_dict = transaction_dict[j]
         shared_expenses.append([temp_dict['created_at'], temp_dict['category'],temp_dict['members'][chat_id]])       
@@ -58,14 +63,14 @@ def overall_plot(chat_id, start_date, end_date):
     plt.savefig('overall_expenses.png', bbox_inches='tight')
     
     
-def categorical_plot(chat_id, start_date, end_date,selected_cat):  
+def categorical_plot(chat_id, start_date, end_date,selected_cat):
     total_expenses_df = get_amount_df(chat_id,type="overall")
     total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
     total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
     total_expenses_df = total_expenses_df[total_expenses_df['Category'].isin([selected_cat])]
     total_expenses_df['Month'] = total_expenses_df['Date'].apply(lambda x: month_dict[x.month])
     sum_df = total_expenses_df[['Month','Amount']].groupby(['Month'],as_index = False).sum()
-    
+
     plt.title("Expenses (for the Dates Selected)")
     plt.ylabel('Amount ($)')
     plt.xlabel('Month')
@@ -73,8 +78,11 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
     label_amount(sum_df['Amount'])
     plt.bar(sum_df['Month'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
     plt.savefig('categorical_expenses.png', bbox_inches='tight')
-    
-    
+    helper.date_range=[]
+
+
+
+
 def owe(chat_id):
     all_ids = []
     for j in expense_dict[chat_id]['transactions']:

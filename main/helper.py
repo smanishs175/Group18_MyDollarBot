@@ -2,26 +2,25 @@ import re
 import json
 import os
 from datetime import datetime
+from telebot_calendar import Calendar, CallbackData, ENGLISH_LANGUAGE
+from telebot.types import ReplyKeyboardRemove, CallbackQuery
 
+#calender initialized
+calendar = Calendar(language=ENGLISH_LANGUAGE)
+calendar_1_callback = CallbackData("calendar_1", "action", "year", "month", "day")
+
+#categories and options
+date_range=[]
+spend_display_option = ['All Expenses','Category Wise','Shared Expense']
+decision=['Yes','No']
 spend_categories = ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous']
-choices = ['Date', 'Category', 'Cost']
-spend_display_option = ['Day', 'Month']
-spend_estimate_option = ['Next day', 'Next month']
+option = {}
+
 update_options = {
     'continue': 'Continue',
     'exit': 'Exit'
 }
 
-budget_options = {
-    'update': 'Add/Update',
-    'view': 'View',
-    'delete': 'Delete'
-}
-
-budget_types = {
-    'overall': 'Overall Budget',
-    'category': 'Category-Wise Budget'
-}
 
 data_format = {
     'data': [],
