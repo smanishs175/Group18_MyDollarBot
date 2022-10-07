@@ -12,13 +12,16 @@ import add_group
 import display_calendar
 from telebot.types import ReplyKeyboardRemove, CallbackQuery
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+import profile
+
 from datetime import datetime
 from jproperties import Properties
 
-#helper.setConfig()
+helper.setConfig()
 helper.loadConfig()
 
 api_token = helper.getApiToken()
+print(api_token)
 bot = telebot.TeleBot(api_token)
 telebot.logger.setLevel(logging.INFO)
 
@@ -68,6 +71,10 @@ def command_addgroup(message):
 @bot.message_handler(commands=['history'])
 def command_history(message):
     history.run(message, bot)
+
+@bot.message_handler(commands=['profile'])
+def command_history(message):
+    profile.run(message, bot)
 
 
 # function to display total expenditure
