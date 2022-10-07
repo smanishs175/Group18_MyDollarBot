@@ -45,7 +45,7 @@ def get_amount_df(chat_id, data_code , type="overall"):
     total_expenses_df['Date'] = pd.to_datetime(total_expenses_df['Date'], format=dateFormat + ' ' + timeFormat)
     return total_expenses_df
 
-def check_data_present(chat_id):
+def check_data_present(chat_id,expense_dict):
    ## checking if chat id has any data
    '''
    1 : data not present in both individual data and shared transactions
@@ -82,7 +82,7 @@ def check_data_present(chat_id):
 
 
 def overall_plot(chat_id, start_date, end_date): 
-    check_data_val = check_data_present(chat_id) 
+    check_data_val = check_data_present(chat_id,expense_dict) 
     if check_data_val == 1:
         return 1
     else:
@@ -107,7 +107,7 @@ def overall_plot(chat_id, start_date, end_date):
 
 
 def categorical_plot(chat_id, start_date, end_date,selected_cat):
-    check_data_val = check_data_present(chat_id) 
+    check_data_val = check_data_present(chat_id,expense_dict) 
     if check_data_val == 1:
         return 1
     else:
@@ -134,7 +134,7 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
 
 
 def owe(chat_id):
-    check_data_val = check_data_present(chat_id) 
+    check_data_val = check_data_present(chat_id,expense_dict) 
     if check_data_val == 1:
         return 1
     elif check_data_val == 2:
