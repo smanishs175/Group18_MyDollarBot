@@ -12,6 +12,9 @@ dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
 
+
+helper.loadConfig()
+
 ## getting json files
 user_key_filename = helper.getUserProfileFile()
 user_key = helper.read_json(user_key_filename)
