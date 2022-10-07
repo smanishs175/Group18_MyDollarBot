@@ -26,5 +26,5 @@ def run(call, bot):
             text="Cancellation",
             reply_markup=ReplyKeyboardRemove(),
         )
-        print(f"{helper.calendar_1_callback}: Cancellation")
-    print(helper.date_range)
+        #print(f"{helper.calendar_1_callback}: Cancellation")
+    #print(helper.date_range)
