@@ -9,3 +9,6 @@ email-validator==1.3.0
 mock
 coverage==6.5.0
 configparser
+pandas
+numpy
+telebot-calendar==1.2
