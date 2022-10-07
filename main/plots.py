@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import helper
+from main import helper
 import numpy as np
 
 month_dict = {1 : 'Jan', 2 : 'Feb', 3 : 'Mar',
