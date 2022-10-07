@@ -15,7 +15,7 @@ spend_display_option = ['All Expenses','Category Wise','Shared Expense']
 decision=['Yes','No']
 spend_categories = ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous']
 option = {}
-
+dataAvailabilityMsg={1:"No expense found for user",2:"No shared expense found for user ",5:"No expense data for selected dates",6:"No expense data for selected dates and category"}
 update_options = {
     'continue': 'Continue',
     'exit': 'Exit'
