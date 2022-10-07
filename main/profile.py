@@ -18,7 +18,7 @@ def post_email_input(message, bot):
         email = message.text
         if not add_group.validate_email_input([email]):
             raise Exception(f"Sorry the email format is not correct: {email}")
-
+        print("hula")
         user_email_file = helper.getUserProfileFile()
         data = helper.read_json(user_email_file)
         data[chat_id] = email
