@@ -104,3 +104,30 @@ def overall_plot(chat_id, start_date, end_date):
             plt.bar(sum_df['Category'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
             plt.savefig('overall_expenses.png', bbox_inches='tight')
             return 7
+
+
+def categorical_plot(chat_id, start_date, end_date,selected_cat):
+    check_data_val = check_data_present(chat_id) 
+    if check_data_val == 1:
+        return 1
+    else:
+        total_expenses_df = get_amount_df(chat_id, check_data_val, type="overall")
+        total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
+        total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
+        total_expenses_df = total_expenses_df[total_expenses_df['Category'].isin([selected_cat])]
+        total_expenses_df['Month'] = total_expenses_df['Date'].apply(lambda x: month_dict[x.month])
+        sum_df = total_expenses_df[['Month','Amount']].groupby(['Month'],as_index = False).sum()
+        if sum_df.shape[0] == 0:
+            return 6 ## 6 means "No expense data for selected dates and Category"
+        else:
+            rand_val = np.random.randint(5001,10000)
+            plt.figure(rand_val)
+            plt.title("Expenses (for the Dates Selected)")
+            plt.ylabel('Amount ($)')
+            plt.xlabel('Month')
+            #plt.xticks(rotation=45)
+            label_amount(sum_df['Amount'])
+            plt.bar(sum_df['Month'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
+            plt.savefig('categorical_expenses.png', bbox_inches='tight')
+            helper.date_range=[]
+            return 7
