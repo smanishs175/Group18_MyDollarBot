@@ -45,3 +45,37 @@ def get_amount_df(chat_id, data_code , type="overall"):
     total_expenses_df['Date'] = pd.to_datetime(total_expenses_df['Date'], format=dateFormat + ' ' + timeFormat)
     return total_expenses_df
 
+def check_data_present(chat_id):
+   ## checking if chat id has any data
+   '''
+   1 : data not present in both individual data and shared transactions
+   2 : data present in individual data but not in shared transactions
+   3 : data present in shared transaction but not in individual data
+   4 : data present in both individual data and shared transactions
+   '''
+   #data_present, transaction_present = 99 , 99 
+   if chat_id not in expense_dict.keys():
+       # chat_id is not present in expense_dict
+       return 1
+   elif expense_dict[chat_id]['personal_expenses'] == []:
+       #data_present = 0
+       if 'group_expenses' not in expense_dict[chat_id].keys():
+           #transaction_present = 0
+           return 1
+       elif expense_dict[chat_id]['group_expenses'] == []:
+           #transaction_present = 0
+           return 1
+       else:
+           #transaction_present = 1
+           return 3
+   else:
+       #data_present = 1
+       if 'group_expenses' not in expense_dict[chat_id].keys():
+           #transaction_present = 0
+           return 2
+       elif expense_dict[chat_id]['group_expenses'] == []:
+           #transaction_present = 0
+           return 2
+       else:
+           #transaction_present = 1
+           return 4
