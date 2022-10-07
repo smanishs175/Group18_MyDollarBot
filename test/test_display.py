@@ -1,9 +1,79 @@
-# import os
-# import json
-# from mock import patch
-# from telebot import types
-# import display
-#
+import os
+import json
+from mock import patch
+from telebot import types
+from main import display
+from main import helper
+from main import plots
+
+decision=['Yes', 'No']
+
+def create_message(text):
+    params = {'text': text}
+    chat = types.User(11, False, 'test')
+    return types.Message(1, None, None, chat, 'text', params, "")
+
+@patch('telebot.telebot')
+def test_run(mock_telebot, mocker):
+    mc = mock_telebot.return_value
+    mc.reply_to.return_value = True
+    message = create_message("hello from test run!")
+    display.run(message, mc)
+    assert mc.send_message.called
+
+
+@patch('telebot.telebot')
+def test_show_categories(mock_telebot,mocker):
+    message = create_message("Yes")
+    opt=message.text
+
+    mc = mock_telebot.return_value
+    mc.reply_to.return_value = True
+    mc = mock_telebot.return_value
+    mc.send_message.return_value = True
+    mc.reply_to.return_value = True
+    display.helper.getSpendCategories.return_value = decision
+    history=True
+
+    display.show_categories(message,mc)
+    assert mc.send_message.called
+
+@patch('telebot.telebot')
+def test_date_selections(mock_telebot,mocker):
+    message = create_message("hello from test run!")
+    mc = mock_telebot.return_value
+    mc.reply_to.return_value = True
+    mc = mock_telebot.return_value
+    mc.send_message.return_value = True
+    mc.reply_to.return_value = True
+
+    display.date_selections(message, mc)
+    assert mc.send_message.called
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 # @patch('telebot.telebot')
 # def test_run(mock_telebot, mocker):
@@ -12,8 +82,8 @@
 #     message = create_message("hello from test run!")
 #     display.run(message, mc)
 #     assert mc.send_message.called
-#
-#
+
+
 # @patch('telebot.telebot')
 # def test_no_data_available(mock_telebot, mocker):
 #     mc = mock_telebot.return_value
