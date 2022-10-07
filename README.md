@@ -15,15 +15,15 @@
 
 <hr>
 
-## About TrackMyDollar Version 2
+## About WalletBuddy
 
-TrackMyDollar is an easy-to-use Telegram Bot that assists you in recording your daily expenses on a local system without any hassle.  
+WalletBuddy is an easy-to-use Telegram Bot that assists you in recording your daily expenses on a local system without any hassle.  
 With simple commands, this bot allows you to:
 - Add/Record a new spending
 - Show the sum of your expenditure for the current day/month
-- Display your spending history
+- Display your spendings plot : All expenses, Category expenses, Group Expenses
 - Clear/Erase all your records
-- Edit/Change any spending details if you wish to
+- Erase any spending details if you wish to
 
 ## Demo
 https://user-images.githubusercontent.com/15325746/135395315-e234dc5e-d891-470a-b3f4-04aa1d11ed45.mp4
@@ -70,8 +70,8 @@ The below instructions can be followed in order to set-up this bot at your end i
 
 <hr>
 <p>--------------------------------------------------------------------------------------------------</p>
-<p>Title:'Track My Dollar'</p>
+<p>Title:'WalletBuddy'</p>
 <p>Version: '1.0'</p>
 <p>Description: 'An easy to use Telegram Bot to track everyday expenses'</p>
-<p>Authors:'Dev, Prakruthi, Radhika, Rohan, Sunidhi'</p>
+<p>Authors:'Nihar, Shruti, Palash, Saksham, Manish'</p>
 <p>--------------------------------------------------------------------------------------------------</p>
