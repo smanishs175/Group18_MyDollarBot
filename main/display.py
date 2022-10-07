@@ -50,7 +50,7 @@ def show_categories(message,bot):
             raise Exception("Sorry wrong option\"{}\"!".format(choice))
 
         if opt == 'Yes':
-            helper.read_json()
+            helper.read_json(helper.getUserProfileFile())
             chat_id = message.chat.id
             history = helper.getUserHistory
             if history == None:
