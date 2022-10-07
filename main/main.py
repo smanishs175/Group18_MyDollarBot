@@ -80,6 +80,13 @@ def command_delete(message):
     erase.run(message, bot)
 
 
+#function to show calender for user to select dates
+@bot.callback_query_handler(
+    func=lambda call: call.data.startswith(helper.calendar_1_callback.prefix)
+)
+def callback_inline(call: CallbackQuery):
+    display_calender.run(call,bot)
+
 def main():
     try:
         bot.polling(none_stop=True)
