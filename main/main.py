@@ -18,10 +18,10 @@ from datetime import datetime
 from jproperties import Properties
 
 helper.setConfig()
-#helper.setConfig()
 helper.loadConfig()
 
 api_token = helper.getApiToken()
+print(api_token)
 bot = telebot.TeleBot(api_token)
 telebot.logger.setLevel(logging.INFO)
 

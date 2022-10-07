@@ -72,11 +72,13 @@ def getUserExpensesFile():
 
 
 def getGroupExpensesFile():
+    setConfig()
     filename = config['files']['GroupExpenses']
     return os.path.join("data", filename)
 
 
 def getUserProfileFile():
+    setConfig()
     filename = config['files']['UserProfile']
     return os.path.join("data", filename)
 
