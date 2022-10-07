@@ -7,7 +7,7 @@ import time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 from telebot import types
-import helper
+from main import helper
 import os
 
 def run(message,bot):
@@ -50,7 +50,7 @@ def show_categories(message,bot):
             raise Exception("Sorry wrong option\"{}\"!".format(choice))
 
         if opt == 'Yes':
-            helper.read_json(helper.getUserProfileFile())
+            helper.read_json(helper.getUserExpensesFile())
             chat_id = message.chat.id
             history = helper.getUserHistory
             if history == None:
