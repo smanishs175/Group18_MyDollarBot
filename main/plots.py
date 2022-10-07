@@ -134,7 +134,6 @@ def categorical_plot(chat_id, start_date, end_date,selected_cat):
             label_amount(sum_df['Amount'])
             plt.bar(sum_df['Month'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
             plt.savefig('categorical_expenses.png', bbox_inches='tight')
-            helper.date_range=[]
             return 7
 
 
