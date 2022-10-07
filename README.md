@@ -1,4 +1,4 @@
-# Group18_TrackMyDollar_V2_Fall2022 
+# WalletBuddy
 <hr>
 <p align="center">
 <a><img  height=560 width=1000 
