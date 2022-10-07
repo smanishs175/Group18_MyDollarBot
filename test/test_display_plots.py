@@ -105,3 +105,28 @@ def check_owe_plot_noSharedData():
     trans_dict = test_read_transaction_json()
     ret_val = plots.owe("5457678456",test_dict,trans_dict)
     assert ret_val == 2    
+    
+def check_overall_plot_DataPresent():
+    test_dict = test_read_expense_json()
+    trans_dict = test_read_transaction_json()
+    start_date = datetime.datetime(2022,5,1)
+    end_date = datetime.datetime(2022,10,1)
+    ret_val = plots.overall_plot("4583959357", start_date, end_date,test_dict,trans_dict)
+    os.remove('overall_expenses.png')
+    assert ret_val == 7
+    
+def check_categorical_plot_DataPresent():
+    test_dict = test_read_expense_json()
+    trans_dict = test_read_transaction_json()
+    start_date = datetime.datetime(2022,5,1)
+    end_date = datetime.datetime(2022,10,1)
+    ret_val = plots.categorical_plot("4583959357", start_date, end_date, "Groceries",test_dict,trans_dict)
+    os.remove('categorical_expenses.png')
+    assert ret_val == 7   
+    
+def check_owe_plot_SharedData():
+    test_dict = test_read_expense_json()
+    trans_dict = test_read_transaction_json()
+    ret_val = plots.owe("4583959357",test_dict,trans_dict)
+    os.remove('owe.png')
+    assert ret_val == 7  
