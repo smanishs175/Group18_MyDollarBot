@@ -3,8 +3,9 @@ from main import helper
 
 def run(message, bot):
     user_list = helper.read_json(helper.getUserExpensesFile())
+    chat_id = message.chat.id
     if str(chat_id) in user_list:
-        helper.write_json(deleteHistory(chat_id), helper.getUserExpensesFile())
+        helper.write_json(deleteHistory(chat_id, user_list), helper.getUserExpensesFile())
         delete_history_text = "History has been deleted!"
     else:
         delete_history_text = "No records there to be deleted. Start adding your expenses to keep track of your " \
@@ -13,7 +14,7 @@ def run(message, bot):
 
 
 # function to delete a record
-def deleteHistory(chat_id):
+def deleteHistory(chat_id, user_list):
     if str(chat_id) in user_list:
         del user_list[str(chat_id)]
     return user_list

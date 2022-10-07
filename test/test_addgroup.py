@@ -9,6 +9,7 @@ dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
 
+helper.loadConfig()
 
 def create_message(text):
     params = {'messagebody': text}
@@ -88,7 +89,7 @@ def test_add_transactions_to_user(mocker):
     add_group.helper.read_json.return_value = {"122": {"email": "pbrr", "transactions": []}}
     add_group.get_emails_ids_mapping.return_value = {"pbrr": 122}
 
-    assert add_group.add_transactions_to_user(122, ["pbrr"])
+    assert add_group.add_transactions_to_user(122, [""])
 
 
 @patch('telebot.telebot')

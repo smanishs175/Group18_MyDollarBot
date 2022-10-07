@@ -4,12 +4,13 @@ from mock.mock import patch
 from telebot import types
 from main import add
 from mock import ANY
+from main import helper
 
 
 dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
-
+helper.loadConfig()
 
 @patch('telebot.telebot')
 def test_run(mock_telebot, mocker):
