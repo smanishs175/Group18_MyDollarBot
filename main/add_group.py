@@ -148,17 +148,6 @@ def generate_transaction_id():
     return random.randint(4000000000, 9999999999)
 
 
-# TODO: remove
-def get_emails_ids_mapping(user_list):
-    emails_user_map = {}
-
-    for user in user_list:
-        if 'email' in user_list[user]:
-            emails_user_map[user_list[user]['email']] = user
-
-    return emails_user_map
-
-
 def add_transactions_to_user(transaction_id, chat_ids):
     transaction_list = helper.read_json(helper.getGroupExpensesFile())
     user_list = helper.read_json(helper.getUserExpensesFile())
