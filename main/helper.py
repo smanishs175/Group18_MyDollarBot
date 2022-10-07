@@ -66,6 +66,7 @@ def loadConfig():
 
 
 def getUserExpensesFile():
+    setConfig()
     filename = config['files']['UserExpenses']
     return os.path.join("data", filename)
 
