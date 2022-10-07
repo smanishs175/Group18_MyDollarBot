@@ -25,6 +25,16 @@ commands = {
     'profile': 'Manage your user profile'
 }
 
+
+# categories and options
+date_range = []
+spend_display_option = ['All Expenses', 'Category Wise', 'Shared Expense']
+decision = ['Yes', 'No']
+spend_categories = ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous']
+dataAvailabilityMsg = {1: "No expense found for user", 2: "No shared expense found for user ",
+                           5: "No expense data for selected dates",
+                           6: "No expense data for selected dates and category"}
+
 dateFormat = '%d-%b-%Y'
 timeFormat = '%H:%M'
 monthFormat = '%b-%Y'
@@ -43,8 +53,9 @@ def setConfig():
         "ApiToken": "",
         "ExpenseCategories": ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous'],
         "ExpenseChoices": ['Date', 'Category', 'Cost'],
-        "DisplayChoices": ['Day', 'Month']
+
     }
+
 
     with open(configFileName, 'w+') as configfile:
         config.write(configfile)
