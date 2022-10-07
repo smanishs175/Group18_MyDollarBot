@@ -11,7 +11,7 @@ import helper
 import os
 
 def run(message,bot):
-    print("run display")
+    helper.date_range=[]
     date_selections(message,bot)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.row_width = 2
@@ -82,10 +82,15 @@ def expense_category(message,bot):
         if not choice_category in helper.spend_categories:
             raise Exception("Sorry I can't show spendings for \"{}\"!".format(choice_category))
 
-        plots.categorical_plot(str(chat_id), start_date, end_date, choice_category)
-        print("executed")
-        bot.send_photo(chat_id, photo=open('categorical_expenses.png', 'rb'))
-        os.remove('categorical_expenses.png')
+        check=plots.categorical_plot(str(chat_id), start_date, end_date, choice_category)
+        #print(check)
+        if check!=7:
+            plotmsg = helper.dataAvailabilityMsg[check]
+            bot.reply_to(message, plotmsg)
+        else:
+            print("executed")
+            bot.send_photo(chat_id, photo=open('categorical_expenses.png', 'rb'))
+            os.remove('categorical_expenses.png')
 
     except Exception as e:
         bot.reply_to(message, str(e))
@@ -111,9 +116,13 @@ def display_total(message,bot):
     total_text = ""
 
     if choice == 'All Expenses':
-        plots.overall_plot(str(chat_id), start_date, end_date)
-        bot.send_photo(chat_id, photo=open('overall_expenses.png', 'rb'))
-        os.remove('overall_expenses.png')
+        check=plots.overall_plot(str(chat_id), start_date, end_date)
+        if check != 7:
+            plotmsg = helper.dataAvailabilityMsg[check]
+            bot.reply_to(message, plotmsg)
+        else:
+            bot.send_photo(chat_id, photo=open('overall_expenses.png', 'rb'))
+            os.remove('overall_expenses.png')
 
     elif choice == 'Category Wise':
         # helper.read_json()
@@ -128,9 +137,13 @@ def display_total(message,bot):
 
 
     elif choice=='Shared Expense':
-        plots.owe(str(chat_id))
-        bot.send_photo(chat_id, photo=open('owe.png', 'rb'))
-        os.remove('owe.png')
+        check=plots.owe(str(chat_id))
+        if check != 7:
+            plotmsg = helper.dataAvailabilityMsg[check]
+            bot.reply_to(message, plotmsg)
+        else:
+            bot.send_photo(chat_id, photo=open('owe.png', 'rb'))
+            os.remove('owe.png')
 
 
     # except Exception as e:
