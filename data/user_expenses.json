@@ -1,9 +1,1 @@
-{
-    "5713840988": {
-        "personal_expenses": [
-            "06-Oct-2022 19:32,Transport,25.0",
-            "06-Oct-2022 19:32,Groceries,50.0"
-        ],
-        "group_expenses": []
-    }
-}
+{"5718815807": {"personal_expenses": ["13-Aug-2022 19:20,Groceries,124.93", "18-Aug-2022 04:33,Utilities,47.86", "25-Sep-2022 05:19,Transport,38.21", "21-Sep-2022 08:27,Transport,156.2", "23-Sep-2022 01:13,Groceries,144.99", "07-Sep-2022 01:34,Groceries,21.34"], "group_expenses": ["26622027", "35563058", "16754425", "23246332"]}, "5745784966": {"personal_expenses": ["27-Aug-2022 18:25,Food,52.05", "27-Sep-2022 22:11,Shopping,65.93", "13-Sep-2022 10:24,Utilities,148.65", "17-Sep-2022 09:25,Shopping,16.43", "24-Aug-2022 02:24,Utilities,15.64", "09-Sep-2022 08:29,Transport,50.05"], "group_expenses": ["26622027", "35563058", "16754425", "31187449"]}, "5706237421": {"personal_expenses": ["03-Aug-2022 06:48,Groceries,127.66", "01-Aug-2022 15:15,Food,57.14", "22-Aug-2022 16:31,Food,83.92", "14-Sep-2022 17:17,Transport,101.95", "05-Aug-2022 02:16,Groceries,8.25", "02-Aug-2022 22:03,Miscellaneous,126.71", "11-Sep-2022 19:15,Transport,139.4", "01-Sep-2022 05:29,Shopping,137.97", "17-Aug-2022 23:28,Groceries,76.98", "26-Sep-2022 01:12,Food,40.58"], "group_expenses": ["19197531", "26622027", "18286563", "16754425", "31187449"]}, "5713840988": {"personal_expenses": ["13-Sep-2022 22:40,Transport,156.39", "20-Aug-2022 20:38,Transport,40.54", "01-Aug-2022 12:16,Food,163.34", "14-Aug-2022 18:51,Transport,145.44", "06-Aug-2022 19:45,Transport,102.16", "01-Sep-2022 07:04,Groceries,144.1", "14-Aug-2022 23:59,Shopping,97.82", "19-Aug-2022 09:34,Transport,131.91"], "group_expenses": ["19197531", "18286563", "23246332"]}}
