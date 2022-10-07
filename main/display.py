@@ -2,7 +2,7 @@
 
 @author: Shruti
 """
-import plots
+from main import plots
 import time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
@@ -33,7 +33,7 @@ def run(message, bot):
 
 
 def date_selections(message, bot):
-    print("date_selections")
+    # print("date_selections")
     now = datetime.now()
     bot.send_message(
         message.chat.id,
@@ -64,7 +64,6 @@ def show_categories(message, bot):
 
         if opt == 'Yes':
             helper.read_json(helper.getUserExpensesFile())
-            chat_id = message.chat.id
             history = helper.getUserHistory(chat_id)
             if not history:
                 bot.send_message(chat_id, "Oops! Looks like you do not have any spending records!")
