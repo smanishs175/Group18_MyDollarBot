@@ -9,11 +9,13 @@ import display
 import erase
 import add
 import add_group
-
+import display_calendar
+from telebot.types import ReplyKeyboardRemove, CallbackQuery
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 from jproperties import Properties
 
-# helper.setConfig()
+#helper.setConfig()
 helper.loadConfig()
 
 api_token = helper.getApiToken()
@@ -85,7 +87,7 @@ def command_delete(message):
     func=lambda call: call.data.startswith(helper.calendar_1_callback.prefix)
 )
 def callback_inline(call: CallbackQuery):
-    display_calender.run(call,bot)
+    display_calendar.run(call,bot)
 
 def main():
     try:
