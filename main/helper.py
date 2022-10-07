@@ -6,6 +6,10 @@ import configparser
 from telebot_calendar import Calendar, CallbackData, ENGLISH_LANGUAGE
 from telebot.types import ReplyKeyboardRemove, CallbackQuery
 
+#calendar initialized
+calendar = Calendar(language=ENGLISH_LANGUAGE)
+calendar_1_callback = CallbackData("calendar_1", "action", "year", "month", "day")
+
 user_expenses_format = {
     "personal_expenses": [],
     "group_expenses": []
