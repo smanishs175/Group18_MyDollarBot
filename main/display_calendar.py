@@ -4,7 +4,8 @@
 """
 import helper
 
-def run(call,bot):
+
+def run(call, bot):
     name, action, year, month, day = call.data.split(helper.calendar_1_callback.sep)
     date = helper.calendar.calendar_query_handler(
         bot=bot, call=call, name=name, action=action, year=year, month=month, day=day

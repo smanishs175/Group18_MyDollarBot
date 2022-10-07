@@ -25,19 +25,7 @@ commands = {
     'profile': 'Manage your user profile'
 }
 
-
-# categories and options
 date_range = []
-spend_display_option = ['All Expenses', 'Category Wise', 'Shared Expense']
-decision = ['Yes', 'No']
-spend_categories = ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous']
-dataAvailabilityMsg = {1: "No expense found for user", 2: "No shared expense found for user ",
-                           5: "No expense data for selected dates",
-                           6: "No expense data for selected dates and category"}
-
-dateFormat = '%d-%b-%Y'
-timeFormat = '%H:%M'
-monthFormat = '%b-%Y'
 
 config = configparser.ConfigParser()
 configFileName = "config.ini"
@@ -51,11 +39,10 @@ def setConfig():
     }
     config["settings"] = {
         "ApiToken": "",
-        "ExpenseCategories": ['Food', 'Groceries', 'Utilities', 'Transport', 'Shopping', 'Miscellaneous'],
-        "ExpenseChoices": ['Date', 'Category', 'Cost'],
-
+        "ExpenseCategories": "Food,Groceries,Utilities,Transport,Shopping,Miscellaneous",
+        "ExpenseChoices": "Date,Category,Cost",
+        "DisplayChoices": "All Expenses,Category Wise,Shared Expense"
     }
-
 
     with open(configFileName, 'w+') as configfile:
         config.write(configfile)
@@ -66,19 +53,19 @@ def loadConfig():
 
 
 def getUserExpensesFile():
-    setConfig()
+    # setConfig()
     filename = config['files']['UserExpenses']
     return os.path.join("data", filename)
 
 
 def getGroupExpensesFile():
-    setConfig()
+    # setConfig()
     filename = config['files']['GroupExpenses']
     return os.path.join("data", filename)
 
 
 def getUserProfileFile():
-    setConfig()
+    # setConfig()
     filename = config['files']['UserProfile']
     return os.path.join("data", filename)
 
@@ -148,21 +135,40 @@ def getExpenseChoices():
     return choices
 
 
+def getApiToken():
+    return config['settings']['ApiToken']
+
+
+def getDataAvailabilityMessages(element):
+    messages = {
+        1: "No expense found for user",
+        2: "No shared expense found for user ",
+        5: "No expense data for selected dates",
+        6: "No expense data for selected dates and category"
+    }
+    return messages[element]
+
+
+def getDecisionChoices():
+    return ['Yes', 'No']
+
+
 def getCommands():
     return commands
 
 
 def getDateFormat():
+    dateFormat = '%d-%b-%Y'
     return dateFormat
 
 
 def getTimeFormat():
+    timeFormat = '%H:%M'
     return timeFormat
 
 
 def getMonthFormat():
+    monthFormat = '%b-%Y'
     return monthFormat
 
 
-def getApiToken():
-    return config['settings']['ApiToken']

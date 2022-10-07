@@ -1,1 +1,93 @@
-{"19197531": {"created_by": "5713840988", "members": {"5706237421": 123.03, "5713840988": 123.03}, "category": "Shopping", "created_at": "11-Aug-2022 17:33", "total": 246.05, "updated_at": null}, "26622027": {"created_by": "5745784966", "members": {"5706237421": 72.99, "5718815807": 72.99, "5745784966": 72.99}, "category": "Shopping", "created_at": "24-Aug-2022 15:05", "total": 218.97, "updated_at": null}, "35563058": {"created_by": "5718815807", "members": {"5745784966": 18.65, "5718815807": 18.65}, "category": "Groceries", "created_at": "28-Aug-2022 17:56", "total": 37.3, "updated_at": null}, "18286563": {"created_by": "5706237421", "members": {"5713840988": 33.64, "5706237421": 33.64}, "category": "Food", "created_at": "04-Aug-2022 15:51", "total": 67.28, "updated_at": null}, "16754425": {"created_by": "5745784966", "members": {"5706237421": 77.84, "5718815807": 77.84, "5745784966": 77.84}, "category": "Shopping", "created_at": "06-Aug-2022 08:20", "total": 311.36, "updated_at": null}, "23246332": {"created_by": "5713840988", "members": {"5718815807": 108.47, "5713840988": 108.47}, "category": "Shopping", "created_at": "01-Sep-2022 04:28", "total": 216.94, "updated_at": null}, "31187449": {"created_by": "5745784966", "members": {"5706237421": 167.12, "5745784966": 167.12}, "category": "Groceries", "created_at": "27-Aug-2022 19:20", "total": 334.25, "updated_at": null}}
+{
+    "19197531": {
+        "created_by": "5713840988",
+        "members": {
+            "5706237421": 123.03,
+            "5713840988": 123.03
+        },
+        "category": "Shopping",
+        "created_at": "11-Aug-2022 17:33",
+        "total": 246.05,
+        "updated_at": null
+    },
+    "26622027": {
+        "created_by": "5745784966",
+        "members": {
+            "5706237421": 72.99,
+            "5718815807": 72.99,
+            "5745784966": 72.99
+        },
+        "category": "Shopping",
+        "created_at": "24-Aug-2022 15:05",
+        "total": 218.97,
+        "updated_at": null
+    },
+    "35563058": {
+        "created_by": "5718815807",
+        "members": {
+            "5745784966": 18.65,
+            "5718815807": 18.65
+        },
+        "category": "Groceries",
+        "created_at": "28-Aug-2022 17:56",
+        "total": 37.3,
+        "updated_at": null
+    },
+    "18286563": {
+        "created_by": "5706237421",
+        "members": {
+            "5713840988": 33.64,
+            "5706237421": 33.64
+        },
+        "category": "Food",
+        "created_at": "04-Aug-2022 15:51",
+        "total": 67.28,
+        "updated_at": null
+    },
+    "16754425": {
+        "created_by": "5745784966",
+        "members": {
+            "5706237421": 77.84,
+            "5718815807": 77.84,
+            "5745784966": 77.84
+        },
+        "category": "Shopping",
+        "created_at": "06-Aug-2022 08:20",
+        "total": 311.36,
+        "updated_at": null
+    },
+    "23246332": {
+        "created_by": "5713840988",
+        "members": {
+            "5718815807": 108.47,
+            "5713840988": 108.47
+        },
+        "category": "Shopping",
+        "created_at": "01-Sep-2022 04:28",
+        "total": 216.94,
+        "updated_at": null
+    },
+    "31187449": {
+        "created_by": "5745784966",
+        "members": {
+            "5706237421": 167.12,
+            "5745784966": 167.12
+        },
+        "category": "Groceries",
+        "created_at": "27-Aug-2022 19:20",
+        "total": 334.25,
+        "updated_at": null
+    },
+    "6283315211": {
+        "total": 34.0,
+        "category": "Utilities",
+        "created_by": "5713840988",
+        "members": {
+            "5713840988": 11.333333333333334,
+            "5745784966": 11.333333333333334,
+            "5706237421": 11.333333333333334
+        },
+        "created_at": "07-Oct-2022 04:59",
+        "updated_at": null
+    }
+}

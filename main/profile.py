@@ -6,13 +6,14 @@ from email_validator import validate_email, EmailNotValidError
 import random
 from main import add_group
 
+
 def run(message, bot):
     msg = bot.reply_to(message, 'Please enter your email')
     bot.register_next_step_handler(msg, post_email_input, bot)
 
-def post_email_input(message, bot):
 
-    chat_id = message.chat.id
+def post_email_input(message, bot):
+    chat_id = str(message.chat.id)
     try:
         email = message.text
         if not add_group.validate_email_input([email]):
@@ -20,7 +21,7 @@ def post_email_input(message, bot):
 
         user_email_file = helper.getUserProfileFile()
         data = helper.read_json(user_email_file)
-        data[str(chat_id)] = email
+        data[chat_id] = email
         helper.write_json(data, user_email_file)
 
         message = bot.send_message(chat_id,

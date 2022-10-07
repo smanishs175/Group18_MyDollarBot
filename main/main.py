@@ -17,11 +17,10 @@ import profile
 from datetime import datetime
 from jproperties import Properties
 
-helper.setConfig()
+# helper.setConfig()
 helper.loadConfig()
 
 api_token = helper.getApiToken()
-print(api_token)
 bot = telebot.TeleBot(api_token)
 telebot.logger.setLevel(logging.INFO)
 
@@ -72,6 +71,7 @@ def command_addgroup(message):
 def command_history(message):
     history.run(message, bot)
 
+
 @bot.message_handler(commands=['profile'])
 def command_history(message):
     profile.run(message, bot)
@@ -89,12 +89,13 @@ def command_delete(message):
     erase.run(message, bot)
 
 
-#function to show calender for user to select dates
+# function to show calendar for user to select dates
 @bot.callback_query_handler(
     func=lambda call: call.data.startswith(helper.calendar_1_callback.prefix)
 )
 def callback_inline(call: CallbackQuery):
-    display_calendar.run(call,bot)
+    display_calendar.run(call, bot)
+
 
 def main():
     try:
