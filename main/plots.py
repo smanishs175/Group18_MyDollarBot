@@ -79,3 +79,28 @@ def check_data_present(chat_id):
        else:
            #transaction_present = 1
            return 4
+
+
+def overall_plot(chat_id, start_date, end_date): 
+    check_data_val = check_data_present(chat_id) 
+    if check_data_val == 1:
+        return 1
+    else:
+        total_expenses_df = get_amount_df(chat_id, check_data_val, type="overall" )
+        total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
+        total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
+        sum_df = total_expenses_df[['Category','Amount']].groupby(['Category'],as_index = False).sum()
+        ## check if df is blank
+        if sum_df.shape[0] == 0:
+            return 5 ## 5 means "No expense data for selected dates"
+        else:
+            rand_val = np.random.randint(1,5000)
+            plt.figure(rand_val)
+            plt.title("Total Expenses (for the Dates Selected)")
+            plt.ylabel('Amount ($)')
+            plt.xlabel('Category')
+            plt.xticks(rotation=45)
+            label_amount(sum_df['Amount'])
+            plt.bar(sum_df['Category'],sum_df['Amount'],color=['r', 'g', 'b', 'y', 'm', 'c', 'k'])
+            plt.savefig('overall_expenses.png', bbox_inches='tight')
+            return 7
