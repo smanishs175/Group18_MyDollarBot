@@ -31,7 +31,7 @@ def label_amount(y):
         plt.text(ind, val, str(round(val, 2)), ha='center', va='bottom')
 
 
-def get_amount_df(chat_id, data_code, type="overall"):
+def get_amount_df(chat_id, data_code,expense_dict,transaction_dict, type="overall"):
     ### plot overall expenses
     individual_expenses, shared_expenses = [], []
     if type not in ["shared"]:
@@ -86,12 +86,12 @@ def check_data_present(chat_id, expense_dict):
             return 4
 
 
-def overall_plot(chat_id, start_date, end_date):
+def overall_plot(chat_id, start_date, end_date,expense_dict,transaction_dict):
     check_data_val = check_data_present(chat_id, expense_dict)
     if check_data_val == 1:
         return 1
     else:
-        total_expenses_df = get_amount_df(chat_id, check_data_val, type="overall")
+        total_expenses_df = get_amount_df(chat_id, check_data_val,expense_dict,transaction_dict, type="overall")
         total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
         total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
         sum_df = total_expenses_df[['Category', 'Amount']].groupby(['Category'], as_index=False).sum()
@@ -111,12 +111,12 @@ def overall_plot(chat_id, start_date, end_date):
             return 7
 
 
-def categorical_plot(chat_id, start_date, end_date, selected_cat):
+def categorical_plot(chat_id, start_date, end_date, selected_cat,expense_dict,transaction_dict):
     check_data_val = check_data_present(chat_id, expense_dict)
     if check_data_val == 1:
         return 1
     else:
-        total_expenses_df = get_amount_df(chat_id, check_data_val, type="overall")
+        total_expenses_df = get_amount_df(chat_id, check_data_val,expense_dict,transaction_dict, type="overall")
         total_expenses_df = total_expenses_df[total_expenses_df['Date'] >= start_date]
         total_expenses_df = total_expenses_df[total_expenses_df['Date'] <= end_date]
         total_expenses_df = total_expenses_df[total_expenses_df['Category'].isin([selected_cat])]
@@ -138,7 +138,7 @@ def categorical_plot(chat_id, start_date, end_date, selected_cat):
             return 7
 
 
-def owe(chat_id):
+def owe(chat_id,expense_dict,transaction_dict):
     check_data_val = check_data_present(chat_id, expense_dict)
     if check_data_val == 1:
         return 1
