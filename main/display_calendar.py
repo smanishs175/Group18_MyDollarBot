@@ -1,11 +1,11 @@
-
 """
 
 @author: Shruti
 """
 import helper
 
-def run(call,bot):
+
+def run(call, bot):
     name, action, year, month, day = call.data.split(helper.calendar_1_callback.sep)
     date = helper.calendar.calendar_query_handler(
         bot=bot, call=call, name=name, action=action, year=year, month=month, day=day
@@ -26,5 +26,5 @@ def run(call,bot):
             text="Cancellation",
             reply_markup=ReplyKeyboardRemove(),
         )
-        print(f"{helper.calendar_1_callback}: Cancellation")
-    print(helper.date_range)
+        #print(f"{helper.calendar_1_callback}: Cancellation")
+    #print(helper.date_range)
