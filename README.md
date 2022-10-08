@@ -8,7 +8,7 @@
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
-[![GitHub repo size](https://img.shields.io/github/repo-size/smanishs175/WalletBuddy/tree/feature-groupexpense)](https://github.com/smanishs175/WalletBuddy/tree/feature-groupexpense)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/smanishs175/WalletBuddy)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/deekay2310/SE21_HW2B_Group6)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542548.svg)](https://doi.org/10.5281/zenodo.5542548)
