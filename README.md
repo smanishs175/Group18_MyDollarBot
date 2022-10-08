@@ -66,7 +66,8 @@ The below instructions can be followed in order to set-up this bot at your end i
 
 14. Post this, navigate to your bot on Telegram, enter the "/start" or "/menu" command, and you are all set to track your expenses!
 
-##Running the publicly hosted bot
+## Running publicly available bot:
+
 If you want to run publicly hosted bot then got to :
 ```
   https://t.me/niharrao_bot
