@@ -22,15 +22,15 @@
 |Use of code coverage | 3|[Yes](https://app.codecov.io/github/smanishs175/WalletBuddy) |
 |Other automated analysis tools| 0| |
 |Test cases exist| 3 |[Test Cases](https://github.com/smanishs175/WalletBuddy/tree/main/Test)
-|Test cases are routinely executed| 3|Yes ([Test Result]())|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/contributing.md) |
-|Issues are discussed before they are closed|0 |[Did not find comments](https://github.com/smanishs175/WalletBuddy/issues/2)
+|Test cases are routinely executed| 3|Yes ([Test Runs](https://github.com/smanishs175/WalletBuddy/actions/runs/3212991558)|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/smanishs175/WalletBuddy/blob/main/CONTRIBUTING.md) |
+|Issues are discussed before they are closed|3 | [Yes](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
 |Chat channel: exists|0| No |
-|Test cases: a large proportion of the issues related to handling failing cases.|3| Code coverage is over 80% |
+|Test cases: a large proportion of the issues related to handling failing cases.|3| Code coverage is over 75% |
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 |100% code in python|
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 |config.ini and requirements.txt is used by all |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 |NA|
-|Evidence that the members of the team are working across multiple places in the code base| 3 |[Yes](https://github.com/smanishs175/WalletBuddy/graphs/contributors) |
+|Evidence that the members of the team are working across multiple places in the code base| 3 |[Yes](https://github.com/deekay2310/MyDollarBot/compare/main...smanishs175:WalletBuddy:feature-groupexpense) |
 |Short release cycles |3| https://github.com/smanishs175/WalletBuddy/releases  |
 
 | Question 1.1: Does your website and documentation provide a clear, high-level overview of your software? |Yes| <br>
