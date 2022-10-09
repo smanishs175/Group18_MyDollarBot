@@ -5,7 +5,7 @@
 |Video1|3|  | 
 |Video2|3|  | 
 |Workload is spread over the whole team | 3 |[Contributor stats](https://github.com/smanishs175/WalletBuddy/graphs/contributors) |
-|Number of commits|3| Total of  commits(https://github.com/smanishs175/WalletBuddy/graphs/commit-activity) |
+|Number of commits|3| [Commits](https://github.com/smanishs175/WalletBuddy/graphs/commit-activity) |
 |Number of commits: by different people|3| nihar4276 -> 8 ; sakshampandey27 -> 1 ; smanishs175 -> 20 ; shrutiv123 ->  ; pjhamb ->  |
 |Issues reports: there are| 3 | [Multiple Issues](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
 |Issues are being closed| 3|[Multiple Issues Closed](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed) |
