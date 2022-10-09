@@ -10,16 +10,9 @@ from telebot import types
 from main import helper
 import os
 
-
 ## getting json files
 
 helper.loadConfig()
-
-expenseFile = helper.getUserExpensesFile()
-expense_dict = helper.read_json(expenseFile)
-
-transactionFile = helper.getGroupExpensesFile()
-transaction_dict = helper.read_json(transactionFile)
 
 def run(message, bot):
     helper.date_range = []
@@ -63,7 +56,8 @@ def show_categories(message, bot):
             raise Exception("Sorry wrong option\"{}\"!".format(opt))
 
         if opt == 'Yes':
-            helper.read_json(helper.getUserExpensesFile())
+            expense_dict = helper.read_json(helper.getUserExpensesFile())
+            transaction_dict = helper.read_json(helper.getGroupExpensesFile())
             history = helper.getUserHistory(chat_id)
             if not history:
                 bot.send_message(chat_id, "Oops! Looks like you do not have any spending records!")
@@ -73,7 +67,7 @@ def show_categories(message, bot):
                 for mode in helper.getSpendDisplayOptions():
                     markup.add(mode)
                 msg = bot.reply_to(message, 'Please select a category to see the total expense', reply_markup=markup)
-                bot.register_next_step_handler(msg, display_total, bot,expense_dict,transaction_dict)
+                bot.register_next_step_handler(msg, display_total, bot, expense_dict, transaction_dict)
         else:
             bot.reply_to(message, "Okay, you selected No hence there is no chart displayed")
 
@@ -81,7 +75,7 @@ def show_categories(message, bot):
         bot.reply_to(message, str(e))
 
 
-def expense_category(message, bot,expense_dict,transaction_dict):
+def expense_category(message, bot, expense_dict, transaction_dict):
     try:
         start_date = helper.date_range[0]
         end_date = helper.date_range[1]
@@ -92,7 +86,8 @@ def expense_category(message, bot,expense_dict,transaction_dict):
         if choice_category not in helper.getSpendCategories():
             raise Exception("Sorry I can't show spendings for \"{}\"!".format(choice_category))
 
-        check = plots.categorical_plot(str(chat_id), start_date, end_date, choice_category,expense_dict,transaction_dict)
+        check = plots.categorical_plot(str(chat_id), start_date, end_date, choice_category, expense_dict,
+                                       transaction_dict)
         # print(check)
         if check != 7:
             plotmsg = helper.getDataAvailabilityMessages(check)
@@ -106,7 +101,7 @@ def expense_category(message, bot,expense_dict,transaction_dict):
         bot.reply_to(message, str(e))
 
 
-def display_total(message, bot,expense_dict,transaction_dict):
+def display_total(message, bot, expense_dict, transaction_dict):
     try:
 
         chat_id = message.chat.id
@@ -127,7 +122,7 @@ def display_total(message, bot,expense_dict,transaction_dict):
         total_text = ""
 
         if choice == 'All Expenses':
-            check = plots.overall_plot(str(chat_id), start_date, end_date,expense_dict,transaction_dict)
+            check = plots.overall_plot(str(chat_id), start_date, end_date, expense_dict, transaction_dict)
             if check != 7:
                 plotmsg = helper.getDataAvailabilityMessages(check)
                 bot.reply_to(message, plotmsg)
@@ -144,10 +139,10 @@ def display_total(message, bot,expense_dict,transaction_dict):
             for c in helper.getSpendCategories():
                 markup.add(c)
             msg = bot.reply_to(message, 'Select Category', reply_markup=markup)
-            bot.register_next_step_handler(msg, expense_category, bot,expense_dict,transaction_dict)
+            bot.register_next_step_handler(msg, expense_category, bot, expense_dict, transaction_dict)
 
         elif choice == 'Shared Expense':
-            check = plots.owe(str(chat_id),expense_dict,transaction_dict)
+            check = plots.owe(str(chat_id), expense_dict, transaction_dict)
             if check != 7:
                 plotmsg = helper.getDataAvailabilityMessages(check)
                 bot.reply_to(message, plotmsg)

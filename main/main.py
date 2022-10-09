@@ -5,6 +5,7 @@ import telebot
 import time
 import helper
 import history
+import plots
 import display
 import erase
 import add
