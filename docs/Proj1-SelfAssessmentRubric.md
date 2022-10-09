@@ -14,13 +14,13 @@
 |Docs: what: point descriptions of each class/function (in isolation) |0| [No docs](https://github.com/smanishs175/WalletBuddy)  |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [No docs](https://github.com/smanishs175/WalletBuddy) 
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 1 | |
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 | |
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 | | Video explains the workings and keeps scope of expansion
 |Use of version control tools| 3|Github is being used for version control |
 |Use of style checkers | 0|| [No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
 |Use of code formatters. | 0| | [No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
 |Use of syntax checkers. | 0| | [No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
 |Use of code coverage | 3|[Yes](https://app.codecov.io/github/smanishs175/WalletBuddy) |
-|Other automated analysis tools| 0| |
+|Other automated analysis tools| 0| | 
 |Test cases exist| 3 |[Test Cases](https://github.com/smanishs175/WalletBuddy/tree/main/Test)
 |Test cases are routinely executed| 3|Yes ([Test Runs](https://github.com/smanishs175/WalletBuddy/actions/runs/3212991558)|
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/smanishs175/WalletBuddy/blob/main/CONTRIBUTING.md) |
