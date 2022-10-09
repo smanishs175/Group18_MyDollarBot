@@ -6,21 +6,21 @@
 |Video2|3|  | 
 |Workload is spread over the whole team | 3 |[Contributor stats](https://github.com/smanishs175/WalletBuddy/graphs/contributors) |
 |Number of commits|3| Total of 85 commits(https://github.com/smanishs175/WalletBuddy/graphs/commit-activity) |
-|Number of commits: by different people|2| Surya-06 -> 18 ; vemuriPradyumna -> 13 ; aditi-v9 -> 11 ; harshitha-ready-to-code -> 11 ; kaushikjadhav01 -> 9 |
-|Issues reports: there are| 1 | [Only one issue was found](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
-|Issues are being closed| 3|[One closed issue was found](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed) |
+|Number of commits: by different people|2| nihar4276 -> 8 ; sakshampandey27 -> 1 ; smanishs175 ->  ; shrutiv123 -> 11 ; pjhamb -> 9 |
+|Issues reports: there are| 3 | [Multiple Issues](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
+|Issues are being closed| 3|[Multiple Issues Closed](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed) |
 |DOI badge: exists|3| Yes ([DOI](https://zenodo.org/record/7046756)) |
-|Docs: doco generated, format not ugly |0| [Did not find docs](https://github.com/smanishs175/WalletBuddy) |
-|Docs: what: point descriptions of each class/function (in isolation) |0| [Did not find docs](https://github.com/smanishs175/WalletBuddy)  |
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [Did not find docs](https://github.com/smanishs175/WalletBuddy) 
+|Docs: doco generated, format not ugly |0| [No docs](https://github.com/smanishs175/WalletBuddy) |
+|Docs: what: point descriptions of each class/function (in isolation) |0| [No docs](https://github.com/smanishs175/WalletBuddy)  |
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [No docs](https://github.com/smanishs175/WalletBuddy) 
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 1 | |
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|2 | |
-|Use of version control tools| 3|Github is used for version control |
+|Use of version control tools| 3|Github is being used for version control |
 |Use of style checkers | 3||
 |Use of code formatters. | 2| |
 |Use of syntax checkers. | 2| |
-|Use of code coverage | 3|[Yes](https://app.codecov.io/gh/Surya-06/SE-Proj22-Team11) |
-|Other automated analysis tools| 0|Did not find |
+|Use of code coverage | 3|[Yes](https://app.codecov.io/github/smanishs175/WalletBuddy) |
+|Other automated analysis tools| 0| |
 |Test cases exist| 3 |[Test Cases](https://github.com/smanishs175/WalletBuddy/tree/main/Test)
 |Test cases are routinely executed| 3|Yes ([Test Result]())|
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/contributing.md) |
