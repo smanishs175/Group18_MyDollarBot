@@ -22,7 +22,7 @@
 |Use of code coverage | 3|[Yes](https://app.codecov.io/github/smanishs175/WalletBuddy) |
 |Other automated analysis tools| 0|  NA
 |Test cases exist| 3 |[Test Cases](https://github.com/smanishs175/WalletBuddy/tree/main/Test)
-|Test cases are routinely executed| 3|Yes ([Test Runs](https://github.com/smanishs175/WalletBuddy/actions/runs/3212991558)|
+|Test cases are routinely executed| 3|Yes [Test Runs](https://github.com/smanishs175/WalletBuddy/actions/runs/3212991558)|
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/smanishs175/WalletBuddy/blob/main/CONTRIBUTING.md) |
 |Issues are discussed before they are closed|3 | [Yes](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
 |Chat channel: exists|0| No |
