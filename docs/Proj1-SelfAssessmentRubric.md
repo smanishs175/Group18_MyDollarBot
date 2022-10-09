@@ -1,155 +1,37 @@
-<table border="0">
- <tr>
-    <th><b style="font-size:30px">Notes</b></th>
-    <th><b style="font-size:30px">Self Assessment zero (none), one (a litte), two (somewhat), three (a lot)</b></th>
-    <th><b style="font-size:30px">evidence</b></th>
- </tr>
- <tr>
-    <td>workload is spread over the whole team (one team member is often Xtimes more productive than the others...</td>
-    <td>Three</td>
-    <td>Every team member has implemented a functionality in the bot, which can be seen via their respective GitHub commits</td>
- </tr>
-  <tr>
-    <td>but nevertheless, here is a track record that everyone is contributing a lot)</td>
-    <td></td>
-    <td></td>
- </tr>
-  <tr>
-    <td>Number of commits</td>
-    <td>Three</td>
-    <td>GitHub commits on 'main': https://github.com/deekay2310/MyDollarBot/commits/main</td>
- </tr>
-  <tr>
-    <td>Number of commits: by different people</td>
-    <td>Three</td>
-    <td>Commits by each team member: https://github.com/deekay2310/MyDollarBot/tree/dev, https://github.com/deekay2310/MyDollarBot/tree/prakruthi, https://github.com/deekay2310/MyDollarBot/tree/radhika, https://github.com/deekay2310/MyDollarBot/tree/rohan, https://github.com/deekay2310/MyDollarBot/tree/Sunidhi</td>
- </tr>
-  <tr>
-    <td>Issues reports: there are many issues are being closed</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/issues</td>
-  </tr>
-  <tr>
-    <td>Issues are being closed</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/issues?q=is%3Aissue+is%3Aclosed</td>
-  </tr>  
-  <tr>
-    <td>DOI badge: exists</td>
-    <td>Three</td>
-    <td>https://zenodo.org/record/5542548#.YVZIrtNue3I</td>
- </tr>
- <tr>
-    <td>Docs: doco generated , format not ugly</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/tree/main/docs</td>
- </tr>
- <tr>
-    <td>Docs: what: point descriptions of each class/function (in isolation)</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/blob/main/docs/functionDescription.md</td>
- </tr>
- <tr>
-    <td>Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/blob/main/README.md</td>
- </tr>
- <tr>
-    <td>Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/blob/main/README.md</td>
- </tr>
- <tr>
-    <td>Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/blob/main/README.md</td>
- </tr>
- <tr>
-    <td>Use of version control tools</td>
-    <td>Three</td>
-    <td></td>
- </tr>
-  <tr>
-    <td>Use of style checkers</td>
-    <td>Two</td>
-    <td>Python's default pep8 checker in pycharm/VS code</td>
- </tr>
- <tr>
-    <td>Use of code formatters</td>
-    <td>Three</td>
-    <td>auto indent feature in VS code, Pycharm or any IDE </td>
- </tr>
- <tr>
-    <td>Use of syntax checkers.</td>
-    <td>Two</td>
-    <td>Via Python IDE</td>
- </tr>
- <tr>
-    <td>Use of code coverage</td>
-    <td>Zero</td>
-    <td></td>
- </tr>
- <tr>
-    <td>other automated analysis tools</td>
-    <td>Zero</td>
-    <td></td>
- </tr>
- <tr>
-    <td>test cases exist</td>
-    <td>One</td>
-    <td></td>
- </tr>
-  <tr>
-    <td>test cases are routinely executed</td>
-    <td>One</td>
-    <td></td>
- </tr>
-  <tr>
-    <td>the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up</td>
-    <td>Three</td>
-    <td>https://github.com/deekay2310/MyDollarBot/blob/main/CONTRIBUTING.md</td>
- </tr>
- <tr>
-    <td>issues are discussed before they are closed</td>
-    <td>Three</td>
-    <td>Scheduled regular zoom meetings and met in person to discuss about various issues, implementations and tasks. Reviewed each other's changes before wrapping up issues. Had continuous discussions over team WhatsApp group as well.</td>
- </tr>
- <tr>
-    <td>Chat channel: exists</td>
-    <td>Three</td>
-    <td>Team specific WhatsApp group</td>
- </tr>
- <tr>
-    <td>test cases:.a large proportion of the issues related to handling failing cases</td>
-    <td>One</td>
-    <td></td>
- </tr>
- <tr>
-    <td>evidence that the whole team is using the same tools: everyone can get to all tools and files</td>
-    <td>Three</td>
-    <td></td>
- </tr>
- <tr>
-    <td>evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)</td>
-    <td>Three</td>
-    <td></td>
- </tr>
- <tr>
-    <td>evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)</td>
-    <td>Three</td>
-    <td></td>
- </tr>
- <tr>
-    <td>evidence that the members of the team are working across multiple places in the code base</td>
-    <td>Three</td>
-    <td></td>
- </tr>
- <tr>
-    <td>short release cycles</td>
-    <td>Three</td>
-    <td>Frequent commits</td>
- </tr>
-</table>
+### Rubric:
+
+|Notes|Self Assessment (Sum=49)|evidence|
+|-----|------------------------|---------|
+|Video1|0| N/A | 
+|Video2|0| N/A | 
+|Workload is spread over the whole team | 0(One member "Surya-06" is often 1.5 times productive than other) |[Contributor stats](https://github.com/Surya-06/SE-Proj22-Team11/graphs/contributors) |
+|Number of commits|3| Total of 85 commits(https://github.com/Surya-06/SE-Proj22-Team11/graphs/commit-activity) |
+|Number of commits: by different people|2| Surya-06 -> 18 ; vemuriPradyumna -> 13 ; aditi-v9 -> 11 ; harshitha-ready-to-code -> 11 ; kaushikjadhav01 -> 9 |
+|Issues reports: there are| 1 | [Only one issue was found](https://github.com/Surya-06/SE-Proj22-Team11/issues?q=is%3Aissue+is%3Aclosed)
+|Issues are being closed| 3|[One closed issue was found](https://github.com/Surya-06/SE-Proj22-Team11/issues?q=is%3Aissue+is%3Aclosed) |
+|DOI badge: exists|3| Yes ([DOI](https://zenodo.org/record/7046756)) |
+|Docs: doco generated, format not ugly |0| [Did not find docs](https://github.com/Surya-06/SE-Proj22-Team11) |
+|Docs: what: point descriptions of each class/function (in isolation) |0| [Did not find docs](https://github.com/Surya-06/SE-Proj22-Team11)  |
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [Did not find docs](https://github.com/Surya-06/SE-Proj22-Team11)  | 
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 0 | [Did not find docs](https://github.com/Surya-06/SE-Proj22-Team11) |
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | [Did not find docs](https://github.com/Surya-06/SE-Proj22-Team11) |
+|Use of version control tools| 3|Github is used for version control |
+|Use of style checkers | 0|[Did not find](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/.github/workflows/build-test.yaml) |
+|Use of code formatters. | 0|[Did not find](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/.github/workflows/build-test.yaml) |
+|Use of syntax checkers. | 0|[Did not find](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/.github/workflows/build-test.yaml) |
+|Use of code coverage | 3|[Yes](https://app.codecov.io/gh/Surya-06/SE-Proj22-Team11) |
+|Other automated analysis tools| 0|Did not find |
+|Test cases exist| 3 |[Test Cases](https://github.com/Surya-06/SE-Proj22-Team11/tree/main/Test)
+|Test cases are routinely executed| 3|Yes ([Test Result](https://github.com/Surya-06/SE-Proj22-Team11/actions/runs/3132691667/jobs/5085298667))|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| [Contributing.md](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/contributing.md) |
+|Issues are discussed before they are closed|0 |[Did not find comments](https://github.com/Surya-06/SE-Proj22-Team11/issues/2)
+|Chat channel: exists|0| No |
+|Test cases: a large proportion of the issues related to handling failing cases.|2| Code coverage is limited |
+|Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 |100% code in python|
+|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 0 |NA|
+|Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 |NA|
+|Evidence that the members of the team are working across multiple places in the code base| 0 |[Not found](https://github.com/Surya-06/SE-Proj22-Team11/graphs/contributors) |
+|Short release cycles |3| https://github.com/Surya-06/SE-Proj22-Team11/releases  |
 
 | Question 1.1: Does your website and documentation provide a clear, high-level overview of your software? |Yes| <br>
 | Question 1.2: Does your website and documentation clearly describe the type of user who should use your software? |Yes| <br>
