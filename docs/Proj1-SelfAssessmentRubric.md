@@ -1,6 +1,6 @@
 ### Rubric:
 
-|Notes|Self Assessment (Sum=117)|Evidence|
+|Notes|Self Assessment (Sum=125)|Evidence|
 |-----|------------------------|---------|
 |Video1|3|https://drive.google.com/file/d/1caBg-SIsCb4IteFN6MNi4vMj-CsXEbxm/view?usp=sharing  | 
 |Video2|3|https://drive.google.com/file/d/19FLLMe2vpOZ24RBWxDzDuHSsgT24DsWF/view?usp=sharing  | 
