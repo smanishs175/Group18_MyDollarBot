@@ -15,11 +15,11 @@
 
 WalletBuddy is an easy-to-use Telegram Bot that assists you in recording your daily expenses on a local system without any hassle.  
 With simple commands, this bot allows you to:
-- Add/Record a new spending
+- Add/Record a new spending 
+- Add shared expenses with friends
 - Show the sum of your expenditure for the current day/month
 - Display your spendings plot : All expenses, Category expenses, Group Expenses
 - Clear/Erase all your records
-- Erase any spending details if you wish to
 
 ## Previous version (old video)
 https://user-images.githubusercontent.com/21088141/194785480-ecefae79-fe5a-4bcf-9513-965108726d94.mp4
