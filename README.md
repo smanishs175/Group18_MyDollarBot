@@ -5,7 +5,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/smanishs175/WalletBuddy)](https://github.com/smanishs175/WalletBuddy/)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 [![GitHub contributors](https://img.shields.io/github/contributors/smanishs175/WalletBuddy)](https://github.com/smanishs175/WalletBuddy/graphs/contributors/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542548.svg)](https://doi.org/10.5281/zenodo.5542548)
+[![DOI](https://zenodo.org/badge/541313017.svg)](https://zenodo.org/badge/latestdoi/541313017)
 [![Platform](https://img.shields.io/badge/Platform-Telegram-blue)](https://desktop.telegram.org/)
 [![Build Status](https://github.com/smanishs175/WalletBuddy/actions/workflows/build.yml/badge.svg)](https://github.com/smanishs175/WalletBuddy/actions/workflows/build.yml)
 
