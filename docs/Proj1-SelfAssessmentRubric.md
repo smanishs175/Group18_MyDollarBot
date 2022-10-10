@@ -1,6 +1,6 @@
 ### Rubric:
 
-|Notes|Self Assessment (Sum=77)|Evidence|
+|Notes|Self Assessment (Sum=117)|Evidence|
 |-----|------------------------|---------|
 |Video1|3|https://drive.google.com/file/d/1caBg-SIsCb4IteFN6MNi4vMj-CsXEbxm/view?usp=sharing  | 
 |Video2|3|https://drive.google.com/file/d/19FLLMe2vpOZ24RBWxDzDuHSsgT24DsWF/view?usp=sharing  | 
@@ -45,14 +45,14 @@
 |Does your documentation include a "quick start" guide, that provides a short overview of how to use your software with some basic examples of use? |3|Yes  |
 |If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software?|3| Yes  |
 |Do you provide a comprehensive guide to all your software’s commands, functions and options?|3| Yes  |
-|Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? |3| No  |
+|Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? |0| No  |
 |If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation?|3| Yes |
 |Do you store your documentation under revision control with your source code? |3| Yes |
 |Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation? |3| Yes |
-|Does your software describe how a user can get help with using your software?|3| Yes |
-|Does your website and documentation describe what support, if any, you provide to users and developers? |3| Yes  |
-| Does your project have an e-mail address or forum that is solely for supporting users? |3| Yes  |
-|Are e-mails to your support e-mail address received by more than one person? |3| Not Applicable |
+|Does your software describe how a user can get help with using your software?|0| No |
+|Does your website and documentation describe what support, if any, you provide to users and developers? |0| No  |
+| Does your project have an e-mail address or forum that is solely for supporting users? |0| No |
+|Are e-mails to your support e-mail address received by more than one person? |0| Not Applicable |
 |Does your project have a ticketing system to manage bug reports and feature requests? |0| No   |
 |Is your project's ticketing system publicly visible to your users, so they can view bug reports and feature requests? |0| Not Applicable |
 
