@@ -7,16 +7,16 @@ command_add(message)
 command_addgroup(message)
 - Function that defines how the /addGroup command has to be handled/processed
 
-command_history
+command_history(message)
 - Function that defines how the /history command has to be handled/processed
 
-command_profile
+command_profile(message)
 - Function that defines how the /profile command has to be handled/processed 
 
-command_display
+command_display(message)
 - Function that defines how the /display command has to be handled/processed
 
-command_erase
+command_erase(message)
 - Function that defines how the /erase command has to be handled/processed
  
 post_category_selection(message)
