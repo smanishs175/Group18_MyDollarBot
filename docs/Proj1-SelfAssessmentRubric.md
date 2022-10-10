@@ -1,6 +1,6 @@
 ### Rubric:
 
-|Notes|Self Assessment (Sum=65)|Evidence|
+|Notes|Self Assessment (Sum=77)|Evidence|
 |-----|------------------------|---------|
 |Video1|3|  | 
 |Video2|3|  | 
@@ -11,14 +11,14 @@
 |Issues are being closed| 3|[Multiple Issues Closed](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed) |
 |DOI badge: exists|3| Yes ([DOI](https://zenodo.org/record/7046756)) |
 |Docs: doco generated, format not ugly |0| [No docs](https://github.com/smanishs175/WalletBuddy) |
-|Docs: what: point descriptions of each class/function (in isolation) |0| [No docs](https://github.com/smanishs175/WalletBuddy)  |
+|Docs: what: point descriptions of each class/function (in isolation) |3| [Function Description](https://github.com/smanishs175/WalletBuddy/blob/main/docs/functionDescription.md)  |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [No docs](https://github.com/smanishs175/WalletBuddy) 
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 2 | The docs tell the workings and installation guide|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 |  Video explains the workings and keeps scope of expansion|
 |Use of version control tools| 3|Github is being used for version control |
-|Use of style checkers | 0|[No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
-|Use of code formatters. | 0|  [No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
-|Use of syntax checkers. | 0|  [No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
+|Use of style checkers | 3| Use of https://peps.python.org/pep-0008/ along with VsCode/PyCharm internal tools and plugins
+|Use of code formatters. | 3|  Use of https://peps.python.org/pep-0008/ along with VsCode/PyCharm internal tools and plugins
+|Use of syntax checkers. | 3|  Use of https://peps.python.org/pep-0008/ along with VsCode/PyCharm internal tools and plugins
 |Use of code coverage | 3|[Yes](https://app.codecov.io/github/smanishs175/WalletBuddy) |
 |Other automated analysis tools| 0|  NA
 |Test cases exist| 3 |[Test Cases](https://github.com/smanishs175/WalletBuddy/tree/main/Test)
