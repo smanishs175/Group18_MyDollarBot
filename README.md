@@ -1,12 +1,5 @@
 # WalletBuddy 
 
-<hr>
-<p align="center">
-<a><img  height=560 width=1000 
-  src="https://github.com/deekay2310/MyDollarBot/blob/c56b4afd4fd5bbfffea0d0a4aade58596a5cb678/docs/0001-8711513694_20210926_212845_0000.png" alt="Expense tracking made easy!"></a>
-</p>
-<hr>
-
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/smanishs175/WalletBuddy)
@@ -28,8 +21,11 @@ With simple commands, this bot allows you to:
 - Clear/Erase all your records
 - Erase any spending details if you wish to
 
-## Demo
-https://user-images.githubusercontent.com/15325746/135395315-e234dc5e-d891-470a-b3f4-04aa1d11ed45.mp4
+## Previous version (old video)
+https://user-images.githubusercontent.com/21088141/194785480-ecefae79-fe5a-4bcf-9513-965108726d94.mp4
+
+## Updated version (new video)
+https://user-images.githubusercontent.com/21088141/194785646-d05f864c-af1e-42f3-b7a1-b68aef4c8fa9.mp4
 
 ## Installation guide
 
