@@ -9,7 +9,7 @@
 |Number of commits: by different people|3| nihar4276 -> 15 ; sakshampandey27 -> 17 ; smanishs175 -> 20 ; shrutiv123 -> 14 ; pjhamb -> 12 . The numbers might seem different it cause everyone created seperate branches and committed and after merging the numbers are different. Everybody worked equally.|
 |Issues reports: there are| 3 | [Multiple Issues](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed)
 |Issues are being closed| 3|[Multiple Issues Closed](https://github.com/smanishs175/WalletBuddy/issues?q=is%3Aissue+is%3Aclosed) |
-|DOI badge: exists|3| Yes ([![DOI](https://zenodo.org/badge/541313017.svg)](https://zenodo.org/badge/latestdoi/541313017) |
+|DOI badge: exists|3| Yes [![DOI](https://zenodo.org/badge/541313017.svg)](https://zenodo.org/badge/latestdoi/541313017) |
 |Docs: doco generated, format not ugly |0| [No docs](https://github.com/smanishs175/WalletBuddy) |
 |Docs: what: point descriptions of each class/function (in isolation) |3| [Function Description](https://github.com/smanishs175/WalletBuddy/blob/main/docs/functionDescription.md)  |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [No docs](https://github.com/smanishs175/WalletBuddy) 
