@@ -1,6 +1,6 @@
 ### Rubric:
 
-|Notes|Self Assessment (Sum=64)|Evidence|
+|Notes|Self Assessment (Sum=65)|Evidence|
 |-----|------------------------|---------|
 |Video1|3|  | 
 |Video2|3|  | 
@@ -13,7 +13,7 @@
 |Docs: doco generated, format not ugly |0| [No docs](https://github.com/smanishs175/WalletBuddy) |
 |Docs: what: point descriptions of each class/function (in isolation) |0| [No docs](https://github.com/smanishs175/WalletBuddy)  |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|  [No docs](https://github.com/smanishs175/WalletBuddy) 
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 1 | The docs tell the workings|
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 2 | The docs tell the workings and installation guide|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3 |  Video explains the workings and keeps scope of expansion|
 |Use of version control tools| 3|Github is being used for version control |
 |Use of style checkers | 0|[No](https://github.com/smanishs175/WalletBuddy/actions/runs/3215838477/workflow)
