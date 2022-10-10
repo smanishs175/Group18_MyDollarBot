@@ -2,7 +2,7 @@
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/smanishs175/WalletBuddy)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/smanishs175/WalletBuddy)(https://github.com/smanishs175/WalletBuddy)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 [![GitHub contributors](https://img.shields.io/github/contributors/smanishs175/WalletBuddy)](https://github.com/smanishs175/WalletBuddy/graphs/contributors/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542548.svg)](https://doi.org/10.5281/zenodo.5542548)
@@ -78,6 +78,6 @@ send message to the bot named "sebot" and start managing your expanses using dif
 <p>--------------------------------------------------------------------------------------------------</p>
 <p>Title:'WalletBuddy'</p>
 <p>Version: '1.0'</p>
-<p>Description: 'An easy to use Telegram Bot to track everyday expenses'</p>
+<p>Description: 'A one-stop solution to track your expenses with your friends'</p>
 <p>Authors:'Nihar, Shruti, Palash, Saksham, Manish'</p>
 <p>--------------------------------------------------------------------------------------------------</p>
