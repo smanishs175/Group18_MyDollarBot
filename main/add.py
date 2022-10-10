@@ -1,4 +1,3 @@
-#import helper
 from main import helper
 import logging
 from telebot import types
@@ -9,7 +8,7 @@ option = {}
 
 
 def run(message, bot):
-    helper.read_json()
+    helper.read_json(helper.getUserExpensesFile())
     chat_id = message.chat.id
     option.pop(chat_id, None)  # remove temp choice
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
@@ -53,19 +52,16 @@ def post_amount_input(message, bot, selected_category):
 
         date_of_entry = datetime.today().strftime(helper.getDateFormat() + ' ' + helper.getTimeFormat())
         date_str, category_str, amount_str = str(date_of_entry), str(option[chat_id]), str(amount_value)
-        helper.write_json(add_user_record(chat_id, "{},{},{}".format(date_str, category_str, amount_str)))
+        helper.write_json(add_user_record(chat_id, "{},{},{}".format(date_str, category_str, amount_str)), helper.getUserExpensesFile())
         bot.send_message(chat_id, 'The following expenditure has been recorded: You have spent ${} for {} on {}'.format(amount_str, category_str, date_str))
-        helper.display_remaining_budget(message, bot, selected_category)
     except Exception as e:
         logging.exception(str(e))
         bot.reply_to(message, 'Oh no. ' + str(e))
 
 
 def add_user_record(chat_id, record_to_be_added):
-    user_list = helper.read_json()
+    user_list = helper.read_json(helper.getUserExpensesFile())
     if str(chat_id) not in user_list:
         user_list[str(chat_id)] = helper.createNewUserRecord()
-        # TODO: add email for user
-
-    user_list[str(chat_id)]['data'].append(record_to_be_added)
+    user_list[str(chat_id)]['personal_expenses'].append(record_to_be_added)
     return user_list

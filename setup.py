@@ -1,10 +1,10 @@
 from setuptools import setup,find_packages
 
 setup(
-    name='Group 18_Track My Dollar_V2',
+    name='WalletBuddy',
     version='1.0',
-    description='An easy to use Telegram Bot to track everyday expenses',
+    description='An easy to use Telegram Bot to track everyday expenses with your friends',
     author='Nihar, Saksham, Manish, Palash, Shruti',
-    scripts=['code/code.py'],
+    scripts=['main/main.py'],
     packages=find_packages()
 )   
