@@ -74,7 +74,7 @@ def command_history(message):
 
 
 @bot.message_handler(commands=['profile'])
-def command_history(message):
+def command_profile(message):
     profile.run(message, bot)
 
 
@@ -86,7 +86,7 @@ def command_display(message):
 
 # handles "/delete" command
 @bot.message_handler(commands=['erase'])
-def command_delete(message):
+def command_erase(message):
     erase.run(message, bot)
 
 

@@ -4,17 +4,35 @@ start_and_menu_command(m)
 command_add(message)
 - Function that defines how the /add command has to be handled/processed
 
+command_addgroup(message)
+- Function that defines how the /addGroup command has to be handled/processed
+
+command_history
+- Function that defines how the /history command has to be handled/processed
+
+command_profile
+- Function that defines how the /profile command has to be handled/processed 
+
+command_display
+- Function that defines how the /display command has to be handled/processed
+
+command_erase
+- Function that defines how the /erase command has to be handled/processed
+ 
 post_category_selection(message)
-- Function that processes that validates the entered category, and accepts amount as input accordingly
+- Function that processes the entered category, and accepts amount as input accordingly
 
 post_amount_input(message)
 - Function that writes the entered amount into the user's json file once the amount is validated 
 
-validate_entered_amount(amount_entered)
-- Function that validates the entered amount for non-string values
+expense_category_input(message) 
+- Function that processes the entered category, and requests the participant emails
 
-AddUserHistory(chat_id, user_record)
-- Function to update expenditure details in the json file as and when user adds them
+take_all_users_input(message, category)
+- Function that accepts the emails and validates them
+
+add_transactions_to_user(transaction_id, chat_ids)
+- Function that adds the created transaction to each participating user
 
 deleteHistory(chat_id)
 - Function to delete previous expenditure history of the user
@@ -22,38 +40,24 @@ deleteHistory(chat_id)
 getUserHistory(chat_id):
 - Function to fetch user history and display it in the bot window
 
-show_history(message)
-- Function to display expendtiture history
-- Error message displayed when no history present
-
-command_display(message)
-- Function to display total expenditure in a day or month, depending on the user input
-
 display_total(message)
 - Function to retrieve spending data per category from user history and return total expense
 
-calculate_spendings(queryResult)
-- Function to calculate the total expense per category from the queryResult
+post_email_input(message)
+- Function to allow the user to update his/her email ID for profile
 
-edit1(m)
-- Function to take input from user about date and the category of the transaction they want to update
-- Once user gives the correct details, function edit2 is triggered
+date_selections(message)
+- Function to allow the user to select the start and end date for the display feature
 
-edit2(m)
-- Based on user's input from edit1, this function checks the field the user wants to update (Date, Category or Cost)
-- The choice selected by the user is passed to edit3
+show_categories(message)
+- Function to allow the user to choose a decision on viewing charts
 
-edit3(m)
-- Based on the information received from edit2, one of the following function is triggered: edit_cat, edit_date or edit_cost
+display_total(message, individual expenses, group expenses)
+- Function to display the expense charts based on user's selection of filtering expenses
 
-edit_cat(m)
-- This function is triggered if user inputs Category in edit2 function
-- It will ask user for new category and update the record accordingly
+expense_category(message, individual expenses, group expenses)
+- Function to allow the user to view expenses for a specific category
 
-edit_date(m)
-- This function is triggered if user inputs Date in edit2 function
-- It will ask user for new date and update the record accordingly
+loadConfig()
+- Function to load the config file
 
-edit_cost(m)
-- This function is triggered if user inputs Cost in edit2 function
-- It will ask user for new cost and update the record accordingly
