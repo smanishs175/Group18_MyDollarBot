@@ -1,6 +1,6 @@
-# Contributing to TrackMyDollar
+# Contributing to WalletBuddy
 
-Follow the set of guidelines below to contribute to TrackMyDollar!
+Follow the set of guidelines below to contribute to WalletBuddy!
 
 ## Code of Conduct
 
@@ -16,7 +16,7 @@ Prerequistes required before starting this project
  
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for TrackMyDollar.
+This section guides you through submitting a bug report for WalletBuddy.
 Following these guidelines helps maintainers and the community understand your report, reproduce the behavior and find related reports.
 
 Before Submitting A Bug Report
