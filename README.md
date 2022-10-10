@@ -1,6 +1,6 @@
 # WalletBuddy 
 
-![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
+<a href="LICENSE">![MIT License](https://img.shields.io/github/license/smanishs175/WalletBuddy)</a>
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![GitHub repo size](https://img.shields.io/github/repo-size/smanishs175/WalletBuddy)](https://github.com/smanishs175/WalletBuddy/)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
