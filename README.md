@@ -4,10 +4,10 @@
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/smanishs175/WalletBuddy)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
-![GitHub contributors](https://img.shields.io/github/contributors/deekay2310/SE21_HW2B_Group6)
+[![GitHub contributors](https://img.shields.io/github/contributors/smanishs175/WalletBuddy)](https://github.com/smanishs175/WalletBuddy/graphs/contributors/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542548.svg)](https://doi.org/10.5281/zenodo.5542548)
 [![Platform](https://img.shields.io/badge/Platform-Telegram-blue)](https://desktop.telegram.org/)
-[![Build Status](https://app.travis-ci.com/deekay2310/MyDollarBot.svg?branch=main)](https://app.travis-ci.com/github/deekay2310/MyDollarBot)
+[![Build Status](https://github.com/smanishs175/WalletBuddy/actions/workflows/build.yml/badge.svg)](https://github.com/smanishs175/WalletBuddy/actions/workflows/build.yml)
 
 <hr>
 
