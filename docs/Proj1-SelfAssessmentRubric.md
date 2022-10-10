@@ -30,5 +30,5 @@
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 |100% code in python|
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 |config.ini and requirements.txt is used by all |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 3 |Tutor can ask and all people of team can share and show the development tools used|
-|Evidence that the members of the team are working across multiple places in the code base| 3 |[Yes](https://github.com/deekay2310/MyDollarBot/compare/main...smanishs175:WalletBuddy:feature-groupexpense) |
+|Evidence that the members of the team are working across multiple places in the code base| 3 |[Yes](https://github.com/smanishs175/WalletBuddy/commits/main) |
 |Short release cycles |3| https://github.com/smanishs175/WalletBuddy/releases  |
